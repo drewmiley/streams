@@ -19,7 +19,7 @@ public class ObjectGenerator {
     }
 
     public SimpleObject[] generateSimpleObjectArray() {
-        return (SimpleObject[]) generateSimpleObjectList().toArray();
+        return generateSimpleObjectList().toArray(new SimpleObject[8]);
     }
 
     public List<SimpleObject> removedSimpleObjectList(int index) {
@@ -39,6 +39,6 @@ public class ObjectGenerator {
     }
 
     public ComplexObject[] generateComplexObjectArray() {
-        return (ComplexObject[]) generateComplexObjectList().toArray();
+        return (ComplexObject[]) generateComplexObjectList().toArray(new ComplexObject[7]);
     }
 }
