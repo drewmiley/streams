@@ -1,6 +1,7 @@
 package life.drewmiley;
 
 import life.drewmiley.examples.Filter;
+import life.drewmiley.examples.FindFirst;
 import life.drewmiley.examples.ForEach;
 import life.drewmiley.examples.Map;
 import life.drewmiley.objects.ObjectGenerator;
@@ -23,6 +24,8 @@ public class StreamExamplesRunner {
         runMap();
         System.out.println("Running filter example");
         runFilter();
+        System.out.println("Running findFirst example");
+        runFindFirst();
     }
 
     private void runForEach() {
@@ -71,5 +74,21 @@ public class StreamExamplesRunner {
 //        System.out.println(filterObjectListStream.size());
 //        System.out.println(filterObjectListImperative.get(0).getNumber() + filterObjectListImperative.get(0).getText());
 //        System.out.println(filterObjectListImperative.size());
+    }
+
+    private void runFindFirst() {
+        FindFirst findFirst = new FindFirst();
+
+        SimpleObject[] simpleObjects = objectGenerator.generateSimpleObjectArray();
+        SimpleObject findFirstObjectsStream = findFirst.runStreamForArray(simpleObjects);
+        SimpleObject findFirstObjectsImperative = findFirst.runImperativeForArray(simpleObjects);
+//        System.out.println(findFirstObjectsStream.getNumber() + findFirstObjectsStream.getText());
+//        System.out.println(findFirstObjectsImperative.getNumber() + findFirstObjectsImperative.getText());
+
+        List<SimpleObject> simpleObjectList = objectGenerator.generateSimpleObjectList();
+        SimpleObject findFirstObjectListStream = findFirst.runStreamForList(simpleObjectList);
+        SimpleObject findFirstObjectListImperative = findFirst.runImperativeForList(simpleObjectList);
+//        System.out.println(findFirstObjectListStream.getNumber() + findFirstObjectListStream.getText());
+//        System.out.println(findFirstObjectListImperative.getNumber() + findFirstObjectListImperative.getText());
     }
 }
