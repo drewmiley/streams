@@ -3,6 +3,6 @@ package life.drewmiley;
 public class Main {
 
     public static void main(String[] args) {
-	    System.out.println("Run");
+	    new StreamExamples().run();
     }
 }
