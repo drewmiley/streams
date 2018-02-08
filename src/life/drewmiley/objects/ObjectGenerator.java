@@ -1,4 +1,7 @@
-package life.drewmiley;
+package life.drewmiley.objects;
+
+import life.drewmiley.objects.ComplexObject;
+import life.drewmiley.objects.SimpleObject;
 
 import java.util.ArrayList;
 import java.util.List;

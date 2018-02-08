@@ -1,4 +1,4 @@
-package life.drewmiley;
+package life.drewmiley.objects;
 
 public class SimpleObject {
 

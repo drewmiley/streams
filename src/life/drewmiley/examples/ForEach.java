@@ -1,6 +1,6 @@
 package life.drewmiley.examples;
 
-import life.drewmiley.SimpleObject;
+import life.drewmiley.objects.SimpleObject;
 
 import java.util.Arrays;
 import java.util.List;
