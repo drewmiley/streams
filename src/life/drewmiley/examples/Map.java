@@ -24,7 +24,7 @@ public class Map {
 
     public String[] runImperativeForArray(SimpleObject[] simpleObjects) {
         String[] mappedObjects = new String[simpleObjects.length];
-        for (int i = 0; i < mappedObjects.length; i++) {
+        for (int i = 0; i < simpleObjects.length; i++) {
             SimpleObject simpleObject = simpleObjects[i];
             mappedObjects[i] = arbitraryMapper(simpleObject);
         }
