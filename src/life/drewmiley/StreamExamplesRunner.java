@@ -25,6 +25,8 @@ public class StreamExamplesRunner {
         runFindFirst();
         System.out.println("Running anyMatch example");
         runAnyMatch();
+        System.out.println("Running allMatch example");
+        runAllMatch();
     }
 
     private void runForEach() {
@@ -105,5 +107,21 @@ public class StreamExamplesRunner {
         boolean anyMatchObjectListImperative = anyMatch.runImperativeForList(simpleObjectList);
 //        System.out.println(anyMatchObjectListStream);
 //        System.out.println(anyMatchObjectListImperative);
+    }
+
+    private void runAllMatch() {
+        AllMatch allMatch = new AllMatch();
+
+        SimpleObject[] simpleObjects = objectGenerator.generateSimpleObjectArray();
+        boolean allMatchObjectsStream = allMatch.runStreamForArray(simpleObjects);
+        boolean allMatchObjectsImperative = allMatch.runImperativeForArray(simpleObjects);
+        System.out.println(allMatchObjectsStream);
+        System.out.println(allMatchObjectsImperative);
+
+        List<SimpleObject> simpleObjectList = objectGenerator.generateSimpleObjectList();
+        boolean allMatchObjectListStream = allMatch.runStreamForList(simpleObjectList);
+        boolean allMatchObjectListImperative = allMatch.runImperativeForList(simpleObjectList);
+        System.out.println(allMatchObjectListStream);
+        System.out.println(allMatchObjectListImperative);
     }
 }
