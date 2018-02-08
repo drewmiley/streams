@@ -5,7 +5,7 @@ import life.drewmiley.objects.SimpleObject;
 import java.util.Arrays;
 import java.util.List;
 
-public class FindFirst {
+public class AnyMatch {
 
     private boolean evilFilter(SimpleObject simpleObject) {
         return simpleObject.getNumber() > 1000000;
@@ -15,40 +15,36 @@ public class FindFirst {
         return simpleObject.getNumber() % 2 == 0;
     }
 
-    public SimpleObject runStreamForArray(SimpleObject[] simpleObjects) {
+    public boolean runStreamForArray(SimpleObject[] simpleObjects) {
         return Arrays.stream(simpleObjects)
-                .filter(simpleObject -> arbitraryFilter(simpleObject))
-                .findFirst()
-                .orElse(null);
+                .anyMatch(simpleObject -> arbitraryFilter(simpleObject));
     }
 
-    public SimpleObject runImperativeForArray(SimpleObject[] simpleObjects) {
-        SimpleObject firstFound = null;
+    public boolean runImperativeForArray(SimpleObject[] simpleObjects) {
+        boolean anyMatch = false;
         for (int i = 0; i < simpleObjects.length; i++) {
             SimpleObject simpleObject = simpleObjects[i];
             if (arbitraryFilter(simpleObject)) {
-                firstFound = simpleObject;
+                anyMatch = true;
                 break;
             }
         }
-        return firstFound;
+        return anyMatch;
     }
 
-    public SimpleObject runStreamForList(List<SimpleObject> simpleObjectList) {
+    public boolean runStreamForList(List<SimpleObject> simpleObjectList) {
         return simpleObjectList.stream()
-                .filter(simpleObject -> arbitraryFilter(simpleObject))
-                .findFirst()
-                .orElse(null);
+                .anyMatch(simpleObject -> arbitraryFilter(simpleObject));
     }
 
-    public SimpleObject runImperativeForList(List<SimpleObject> simpleObjectList) {
-        SimpleObject firstFound = null;
+    public boolean runImperativeForList(List<SimpleObject> simpleObjectList) {
+        boolean anyMatch = false;
         for (SimpleObject simpleObject : simpleObjectList) {
             if (arbitraryFilter(simpleObject)) {
-                firstFound = simpleObject;
+                anyMatch = true;
                 break;
             }
         }
-        return firstFound;
+        return anyMatch;
     }
 }

@@ -1,9 +1,6 @@
 package life.drewmiley;
 
-import life.drewmiley.examples.Filter;
-import life.drewmiley.examples.FindFirst;
-import life.drewmiley.examples.ForEach;
-import life.drewmiley.examples.Map;
+import life.drewmiley.examples.*;
 import life.drewmiley.objects.ObjectGenerator;
 import life.drewmiley.objects.SimpleObject;
 
@@ -26,6 +23,8 @@ public class StreamExamplesRunner {
         runFilter();
         System.out.println("Running findFirst example");
         runFindFirst();
+        System.out.println("Running anyMatch example");
+        runAnyMatch();
     }
 
     private void runForEach() {
@@ -90,5 +89,21 @@ public class StreamExamplesRunner {
         SimpleObject findFirstObjectListImperative = findFirst.runImperativeForList(simpleObjectList);
 //        System.out.println(findFirstObjectListStream.getNumber() + findFirstObjectListStream.getText());
 //        System.out.println(findFirstObjectListImperative.getNumber() + findFirstObjectListImperative.getText());
+    }
+
+    private void runAnyMatch() {
+        AnyMatch anyMatch = new AnyMatch();
+
+        SimpleObject[] simpleObjects = objectGenerator.generateSimpleObjectArray();
+        boolean anyMatchObjectsStream = anyMatch.runStreamForArray(simpleObjects);
+        boolean anyMatchObjectsImperative = anyMatch.runImperativeForArray(simpleObjects);
+//        System.out.println(anyMatchObjectsStream);
+//        System.out.println(anyMatchObjectsImperative);
+
+        List<SimpleObject> simpleObjectList = objectGenerator.generateSimpleObjectList();
+        boolean anyMatchObjectListStream = anyMatch.runStreamForList(simpleObjectList);
+        boolean anyMatchObjectListImperative = anyMatch.runImperativeForList(simpleObjectList);
+//        System.out.println(anyMatchObjectListStream);
+//        System.out.println(anyMatchObjectListImperative);
     }
 }
