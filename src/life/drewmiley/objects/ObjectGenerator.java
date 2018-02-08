@@ -26,7 +26,9 @@ public class ObjectGenerator {
     }
 
     public List<SimpleObject> removedSimpleObjectList(int index) {
-        return (List<SimpleObject>) generateSimpleObjectList().remove(index);
+        List<SimpleObject> list = generateSimpleObjectList();
+        list.remove(index);
+        return list;
     }
 
     public List<ComplexObject> generateComplexObjectList() {
