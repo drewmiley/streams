@@ -17,6 +17,14 @@ public class ComplexObject {
         return text;
     }
 
+    public void setNumber(int number) {
+        this.number = number;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+
     public SimpleObject getSimpleObject() {
         return simpleObject;
     }
@@ -26,8 +34,8 @@ public class ComplexObject {
     }
 
     public ComplexObject(int number, String text, SimpleObject simpleObject, List<SimpleObject> simpleObjectList) {
-        this.number = number;
-        this.text = text;
+        this.setNumber(number);
+        this.setText(text);
         this.simpleObject = simpleObject;
         this.simpleObjectList = simpleObjectList;
     }

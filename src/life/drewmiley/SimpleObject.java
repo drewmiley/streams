@@ -13,8 +13,16 @@ public class SimpleObject {
         return text;
     }
 
-    public SimpleObject(int number, String text) {
+    public void setNumber(int number) {
         this.number = number;
+    }
+
+    public void setText(String text) {
         this.text = text;
+    }
+
+    public SimpleObject(int number, String text) {
+        this.setNumber(number);
+        this.setText(text);
     }
 }
