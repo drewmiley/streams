@@ -7,28 +7,28 @@ import java.util.List;
 
 public class ForEach {
 
-    private void arbitaryFunction(SimpleObject simpleObject) {
+    private void arbitraryFunction(SimpleObject simpleObject) {
 //        System.out.println(simpleObject.getNumber() + simpleObject.getText());
     }
 
     public void runStreamForArray(SimpleObject[] simpleObjects) {
-        Arrays.stream(simpleObjects).forEach(simpleObject -> arbitaryFunction(simpleObject));
+        Arrays.stream(simpleObjects).forEach(simpleObject -> arbitraryFunction(simpleObject));
     }
 
     public void runImperativeForArray(SimpleObject[] simpleObjects) {
         for (int i = 0; i < simpleObjects.length; i++) {
             SimpleObject simpleObject = simpleObjects[i];
-            arbitaryFunction(simpleObject);
+            arbitraryFunction(simpleObject);
         }
     }
 
     public void runStreamForList(List<SimpleObject> simpleObjectList) {
-        simpleObjectList.forEach(simpleObject -> arbitaryFunction(simpleObject));
+        simpleObjectList.forEach(simpleObject -> arbitraryFunction(simpleObject));
     }
 
     public void runImperativeForList(List<SimpleObject> simpleObjectList) {
         for (SimpleObject simpleObject : simpleObjectList) {
-            arbitaryFunction(simpleObject);
+            arbitraryFunction(simpleObject);
         }
     }
 }
