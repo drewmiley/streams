@@ -31,6 +31,8 @@ public class StreamExamplesRunner {
         runFlatMap();
         System.out.println("Running sorted example");
         runSorted();
+        System.out.println("Running max example");
+        runMax();
     }
 
     private void runForEach() {
@@ -152,12 +154,26 @@ public class StreamExamplesRunner {
 
         SimpleObject[] sortedObjectsStream = sorted.runStreamForArray(objectGenerator.generateSimpleObjectArray());
         SimpleObject[] sortedObjectsImperative = sorted.runImperativeForArray(objectGenerator.generateSimpleObjectArray());
-        System.out.println(sortedObjectsStream[0].getNumber() + sortedObjectsStream[0].getText());
-        System.out.println(sortedObjectsImperative[0].getNumber() + sortedObjectsImperative[0].getText());
+//        System.out.println(sortedObjectsStream[0].getNumber() + sortedObjectsStream[0].getText());
+//        System.out.println(sortedObjectsImperative[0].getNumber() + sortedObjectsImperative[0].getText());
 
         List<SimpleObject> sortedObjectListStream = sorted.runStreamForList(objectGenerator.generateSimpleObjectList());
         List<SimpleObject> sortedObjectListImperative = sorted.runImperativeForList(objectGenerator.generateSimpleObjectList());
-        System.out.println(sortedObjectListStream.get(0).getNumber() + sortedObjectListStream.get(0).getText());
-        System.out.println(sortedObjectListImperative.get(0).getNumber() + sortedObjectListImperative.get(0).getText());
+//        System.out.println(sortedObjectListStream.get(0).getNumber() + sortedObjectListStream.get(0).getText());
+//        System.out.println(sortedObjectListImperative.get(0).getNumber() + sortedObjectListImperative.get(0).getText());
+    }
+
+    private void runMax() {
+        Max max = new Max();
+
+        SimpleObject maxObjectsStream = max.runStreamForArray(objectGenerator.generateSimpleObjectArray());
+        SimpleObject maxObjectsImperative = max.runImperativeForArray(objectGenerator.generateSimpleObjectArray());
+        System.out.println(maxObjectsStream.getNumber() + maxObjectsStream.getText());
+        System.out.println(maxObjectsImperative.getNumber() + maxObjectsImperative.getText());
+
+        SimpleObject maxObjectListStream = max.runStreamForList(objectGenerator.generateSimpleObjectList());
+        SimpleObject maxObjectListImperative = max.runImperativeForList(objectGenerator.generateSimpleObjectList());
+        System.out.println(maxObjectListStream.getNumber() + maxObjectListStream.getText());
+        System.out.println(maxObjectListImperative.getNumber() + maxObjectListImperative.getText());
     }
 }
