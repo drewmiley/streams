@@ -1,7 +1,6 @@
 package life.drewmiley;
 
 import life.drewmiley.examples.*;
-import life.drewmiley.objects.ComplexObject;
 import life.drewmiley.objects.ObjectGenerator;
 import life.drewmiley.objects.SimpleObject;
 
@@ -30,6 +29,8 @@ public class StreamExamplesRunner {
         runAllMatch();
         System.out.println("Running flatMap example");
         runFlatMap();
+        System.out.println("Running sorted example");
+        runSorted();
     }
 
     private void runForEach() {
@@ -133,16 +134,30 @@ public class StreamExamplesRunner {
 
         SimpleObject[] flatMapObjectsStream = flatMap.runStreamForArray(objectGenerator.generateComplexObjectArray());
         SimpleObject[] flatMapObjectsImperative = flatMap.runImperativeForArray(objectGenerator.generateComplexObjectArray());
-        System.out.println(flatMapObjectsStream[0].getNumber() + flatMapObjectsStream[0].getText());
-        System.out.println(flatMapObjectsStream.length);
-        System.out.println(flatMapObjectsImperative[0].getNumber() + flatMapObjectsImperative[0].getText());
-        System.out.println(flatMapObjectsImperative.length);
+//        System.out.println(flatMapObjectsStream[0].getNumber() + flatMapObjectsStream[0].getText());
+//        System.out.println(flatMapObjectsStream.length);
+//        System.out.println(flatMapObjectsImperative[0].getNumber() + flatMapObjectsImperative[0].getText());
+//        System.out.println(flatMapObjectsImperative.length);
 
         List<SimpleObject> flatMapObjectListStream = flatMap.runStreamForList(objectGenerator.generateComplexObjectList());
         List<SimpleObject> flatMapObjectListImperative = flatMap.runImperativeForList(objectGenerator.generateComplexObjectList());
-        System.out.println(flatMapObjectListStream.get(0).getNumber() + flatMapObjectListStream.get(0).getText());
-        System.out.println(flatMapObjectListStream.size());
-        System.out.println(flatMapObjectListImperative.get(0).getNumber() + flatMapObjectListImperative.get(0).getText());
-        System.out.println(flatMapObjectListImperative.size());
+//        System.out.println(flatMapObjectListStream.get(0).getNumber() + flatMapObjectListStream.get(0).getText());
+//        System.out.println(flatMapObjectListStream.size());
+//        System.out.println(flatMapObjectListImperative.get(0).getNumber() + flatMapObjectListImperative.get(0).getText());
+//        System.out.println(flatMapObjectListImperative.size());
+    }
+
+    private void runSorted() {
+        Sorted sorted = new Sorted();
+
+        SimpleObject[] sortedObjectsStream = sorted.runStreamForArray(objectGenerator.generateSimpleObjectArray());
+        SimpleObject[] sortedObjectsImperative = sorted.runImperativeForArray(objectGenerator.generateSimpleObjectArray());
+        System.out.println(sortedObjectsStream[0].getNumber() + sortedObjectsStream[0].getText());
+        System.out.println(sortedObjectsImperative[0].getNumber() + sortedObjectsImperative[0].getText());
+
+        List<SimpleObject> sortedObjectListStream = sorted.runStreamForList(objectGenerator.generateSimpleObjectList());
+        List<SimpleObject> sortedObjectListImperative = sorted.runImperativeForList(objectGenerator.generateSimpleObjectList());
+        System.out.println(sortedObjectListStream.get(0).getNumber() + sortedObjectListStream.get(0).getText());
+        System.out.println(sortedObjectListImperative.get(0).getNumber() + sortedObjectListImperative.get(0).getText());
     }
 }
