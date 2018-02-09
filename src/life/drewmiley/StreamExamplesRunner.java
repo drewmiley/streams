@@ -33,6 +33,8 @@ public class StreamExamplesRunner {
         runSorted();
         System.out.println("Running max example");
         runMax();
+        System.out.println("Running reduce example");
+        runReduce();
     }
 
     private void runForEach() {
@@ -168,12 +170,26 @@ public class StreamExamplesRunner {
 
         SimpleObject maxObjectsStream = max.runStreamForArray(objectGenerator.generateSimpleObjectArray());
         SimpleObject maxObjectsImperative = max.runImperativeForArray(objectGenerator.generateSimpleObjectArray());
-        System.out.println(maxObjectsStream.getNumber() + maxObjectsStream.getText());
-        System.out.println(maxObjectsImperative.getNumber() + maxObjectsImperative.getText());
+//        System.out.println(maxObjectsStream.getNumber() + maxObjectsStream.getText());
+//        System.out.println(maxObjectsImperative.getNumber() + maxObjectsImperative.getText());
 
         SimpleObject maxObjectListStream = max.runStreamForList(objectGenerator.generateSimpleObjectList());
         SimpleObject maxObjectListImperative = max.runImperativeForList(objectGenerator.generateSimpleObjectList());
-        System.out.println(maxObjectListStream.getNumber() + maxObjectListStream.getText());
-        System.out.println(maxObjectListImperative.getNumber() + maxObjectListImperative.getText());
+//        System.out.println(maxObjectListStream.getNumber() + maxObjectListStream.getText());
+//        System.out.println(maxObjectListImperative.getNumber() + maxObjectListImperative.getText());
+    }
+    
+    private void runReduce() {
+        Reduce reduce = new Reduce();
+
+        SimpleObject reduceObjectsStream = reduce.runStreamForArray(objectGenerator.generateSimpleObjectArray());
+        SimpleObject reduceObjectsImperative = reduce.runImperativeForArray(objectGenerator.generateSimpleObjectArray());
+//        System.out.println(reduceObjectsStream.getNumber() + reduceObjectsStream.getText());
+//        System.out.println(reduceObjectsImperative.getNumber() + reduceObjectsImperative.getText());
+
+        SimpleObject reduceObjectListStream = reduce.runStreamForList(objectGenerator.generateSimpleObjectList());
+        SimpleObject reduceObjectListImperative = reduce.runImperativeForList(objectGenerator.generateSimpleObjectList());
+//        System.out.println(reduceObjectListStream.getNumber() + reduceObjectListStream.getText());
+//        System.out.println(reduceObjectListImperative.getNumber() + reduceObjectListImperative.getText());
     }
 }
