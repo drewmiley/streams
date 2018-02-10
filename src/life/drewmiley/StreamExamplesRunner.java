@@ -35,6 +35,8 @@ public class StreamExamplesRunner {
         runMax();
         System.out.println("Running reduce example");
         runReduce();
+        System.out.println("Running example of side effects");
+        runSideEffects();
     }
 
     private void runForEach() {
@@ -191,5 +193,17 @@ public class StreamExamplesRunner {
         SimpleObject reduceObjectListImperative = reduce.runImperativeForList(objectGenerator.generateSimpleObjectList());
 //        System.out.println(reduceObjectListStream.getNumber() + reduceObjectListStream.getText());
 //        System.out.println(reduceObjectListImperative.getNumber() + reduceObjectListImperative.getText());
+    }
+
+    private void runSideEffects() {
+        SideEffects sideEffects = new SideEffects();
+
+        SimpleObject[] simpleObjects = objectGenerator.generateSimpleObjectArray();
+        SimpleObject[] sideEffectsObjectsStream = sideEffects.runStreamForArray(simpleObjects);
+        SimpleObject[] sideEffectsObjectsImperative = sideEffects.runImperativeForArray(simpleObjects);
+
+        List<SimpleObject> simpleObjectList = objectGenerator.generateSimpleObjectList();
+        List<SimpleObject> sideEffectsObjectListStream = sideEffects.runStreamForList(simpleObjectList);
+        List<SimpleObject> sideEffectsObjectListImperative = sideEffects.runImperativeForList(simpleObjectList);
     }
 }
