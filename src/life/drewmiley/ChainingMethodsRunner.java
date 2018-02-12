@@ -1,6 +1,7 @@
 package life.drewmiley;
 
 import life.drewmiley.examples.chaining.FilterFlatMap;
+import life.drewmiley.examples.chaining.FilterMap;
 import life.drewmiley.objects.SimpleObject;
 
 import java.util.List;
@@ -62,7 +63,23 @@ public class ChainingMethodsRunner extends Runner {
     }
 
     private void runFilterMap() {
+        FilterMap filterMap = new FilterMap();
 
+        SimpleObject[] simpleObjects = objectGenerator.generateSimpleObjectArray();
+        String[] objectsStream = filterMap.runStreamForArray(simpleObjects);
+        String[] objectsImperative = filterMap.runImperativeForArray(simpleObjects);
+//        System.out.println(objectsStream[0]);
+//        System.out.println(objectsStream.length);
+//        System.out.println(objectsImperative[0]);
+//        System.out.println(objectsImperative.length);
+
+        List<SimpleObject> simpleObjectList = objectGenerator.generateSimpleObjectList();
+        List<String> objectListStream = filterMap.runStreamForList(simpleObjectList);
+        List<String> objectListImperative = filterMap.runImperativeForList(simpleObjectList);
+//        System.out.println(objectListStream.get(0));
+//        System.out.println(objectListStream.size());
+//        System.out.println(objectListImperative.get(0));
+//        System.out.println(objectListImperative.size());
     }
 
     private void runFilterSorted() {
