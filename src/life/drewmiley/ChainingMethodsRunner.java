@@ -2,6 +2,7 @@ package life.drewmiley;
 
 import life.drewmiley.examples.chaining.FilterFlatMap;
 import life.drewmiley.examples.chaining.FilterMap;
+import life.drewmiley.examples.chaining.FilterReduce;
 import life.drewmiley.objects.SimpleObject;
 
 import java.util.List;
@@ -15,7 +16,7 @@ public class ChainingMethodsRunner extends Runner {
         System.out.println("    -Filter, Map");
         runFilterMap();
         System.out.println("    -Filter, Reduce");
-        runFilterSorted();
+        runFilterReduce();
         System.out.println("    -Filter, Sorted");
         runFilterSorted();
         System.out.println("    -FlatMap, Filter");
@@ -28,6 +29,8 @@ public class ChainingMethodsRunner extends Runner {
         runFlatMapSorted();
         System.out.println("    -Map, Filter");
         runMapFilter();
+        System.out.println("    -Map, Reduce");
+        runMapReduce();
         System.out.println("    -Map, Sorted");
         runMapSorted();
         System.out.println("    -Sorted, Filter");
@@ -82,6 +85,22 @@ public class ChainingMethodsRunner extends Runner {
 //        System.out.println(objectListImperative.size());
     }
 
+    private void runFilterReduce() {
+        FilterReduce filterReduce = new FilterReduce();
+
+        SimpleObject[] simpleObjects = objectGenerator.generateSimpleObjectArray();
+        SimpleObject objectsStream = filterReduce.runStreamForArray(simpleObjects);
+        SimpleObject objectsImperative = filterReduce.runImperativeForArray(simpleObjects);
+//        System.out.println(objectsStream.getNumber() + objectsStream.getText());
+//        System.out.println(objectsImperative.getNumber() + objectsImperative.getText());
+
+        List<SimpleObject> simpleObjectList = objectGenerator.generateSimpleObjectList();
+        SimpleObject objectListStream = filterReduce.runStreamForList(simpleObjectList);
+        SimpleObject objectListImperative = filterReduce.runImperativeForList(simpleObjectList);
+//        System.out.println(objectListStream.getNumber() + objectListStream.getText());
+//        System.out.println(objectListImperative.getNumber() + objectListImperative.getText());
+    }
+
     private void runFilterSorted() {
 
     }
@@ -103,6 +122,10 @@ public class ChainingMethodsRunner extends Runner {
     }
 
     private void runMapFilter() {
+
+    }
+
+    private void runMapReduce() {
 
     }
 
