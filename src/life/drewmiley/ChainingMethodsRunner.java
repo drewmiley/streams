@@ -1,9 +1,6 @@
 package life.drewmiley;
 
-import life.drewmiley.examples.chaining.FilterFlatMap;
-import life.drewmiley.examples.chaining.FilterMap;
-import life.drewmiley.examples.chaining.FilterReduce;
-import life.drewmiley.examples.chaining.FilterSorted;
+import life.drewmiley.examples.chaining.*;
 import life.drewmiley.objects.SimpleObject;
 
 import java.util.List;
@@ -123,7 +120,21 @@ public class ChainingMethodsRunner extends Runner {
     }
 
     private void runFlatMapFilter() {
+        FlatMapFilter flatMapFilter = new FlatMapFilter();
 
+        SimpleObject[] objectsStream = flatMapFilter.runStreamForArray(objectGenerator.generateComplexObjectArray());
+        SimpleObject[] objectsImperative = flatMapFilter.runImperativeForArray(objectGenerator.generateComplexObjectArray());
+        System.out.println(objectsStream[0].getNumber() + objectsStream[0].getText());
+        System.out.println(objectsStream.length);
+        System.out.println(objectsImperative[0].getNumber() + objectsImperative[0].getText());
+        System.out.println(objectsImperative.length);
+
+        List<SimpleObject> objectListStream = flatMapFilter.runStreamForList(objectGenerator.generateComplexObjectList());
+        List<SimpleObject> objectListImperative = flatMapFilter.runImperativeForList(objectGenerator.generateComplexObjectList());
+        System.out.println(objectListStream.get(0).getNumber() + objectListStream.get(0).getText());
+        System.out.println(objectListStream.size());
+        System.out.println(objectListImperative.get(0).getNumber() + objectListImperative.get(0).getText());
+        System.out.println(objectListImperative.size());
     }
 
     private void runFlatMapMap() {
