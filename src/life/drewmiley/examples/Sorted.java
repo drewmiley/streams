@@ -2,6 +2,7 @@ package life.drewmiley.examples;
 
 import life.drewmiley.objects.SimpleObject;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -18,7 +19,7 @@ public class Sorted {
     }
 
     public SimpleObject[] runImperativeForArray(SimpleObject[] simpleObjects) {
-        SimpleObject[] array = simpleObjects;
+        SimpleObject[] array = Arrays.copyOf(simpleObjects, simpleObjects.length);
         Arrays.sort(array, this::arbitrarySorter);
         return array;
     }
@@ -29,7 +30,7 @@ public class Sorted {
     }
 
     public List<SimpleObject> runImperativeForList(List<SimpleObject> simpleObjects) {
-        List<SimpleObject> list = simpleObjects;
+        List<SimpleObject> list = new ArrayList<>(simpleObjects);
         list.sort(this::arbitrarySorter);
         return list;
     }
