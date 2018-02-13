@@ -1,18 +1,11 @@
 package life.drewmiley;
 
 import life.drewmiley.examples.*;
-import life.drewmiley.objects.ObjectGenerator;
 import life.drewmiley.objects.SimpleObject;
 
 import java.util.List;
 
-public class StreamExamplesRunner {
-
-    private ObjectGenerator objectGenerator;
-
-    public StreamExamplesRunner() {
-        this.objectGenerator = new ObjectGenerator();
-    }
+public class StreamExamplesRunner extends Runner {
 
     public void run() {
         System.out.println("Running forEach example");
