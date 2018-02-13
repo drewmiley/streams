@@ -124,21 +124,35 @@ public class ChainingMethodsRunner extends Runner {
 
         SimpleObject[] objectsStream = flatMapFilter.runStreamForArray(objectGenerator.generateComplexObjectArray());
         SimpleObject[] objectsImperative = flatMapFilter.runImperativeForArray(objectGenerator.generateComplexObjectArray());
-        System.out.println(objectsStream[0].getNumber() + objectsStream[0].getText());
-        System.out.println(objectsStream.length);
-        System.out.println(objectsImperative[0].getNumber() + objectsImperative[0].getText());
-        System.out.println(objectsImperative.length);
+//        System.out.println(objectsStream[0].getNumber() + objectsStream[0].getText());
+//        System.out.println(objectsStream.length);
+//        System.out.println(objectsImperative[0].getNumber() + objectsImperative[0].getText());
+//        System.out.println(objectsImperative.length);
 
         List<SimpleObject> objectListStream = flatMapFilter.runStreamForList(objectGenerator.generateComplexObjectList());
         List<SimpleObject> objectListImperative = flatMapFilter.runImperativeForList(objectGenerator.generateComplexObjectList());
-        System.out.println(objectListStream.get(0).getNumber() + objectListStream.get(0).getText());
-        System.out.println(objectListStream.size());
-        System.out.println(objectListImperative.get(0).getNumber() + objectListImperative.get(0).getText());
-        System.out.println(objectListImperative.size());
+//        System.out.println(objectListStream.get(0).getNumber() + objectListStream.get(0).getText());
+//        System.out.println(objectListStream.size());
+//        System.out.println(objectListImperative.get(0).getNumber() + objectListImperative.get(0).getText());
+//        System.out.println(objectListImperative.size());
     }
 
     private void runFlatMapMap() {
+        FlatMapMap flatMapMap = new FlatMapMap();
 
+        String[] objectsStream = flatMapMap.runStreamForArray(objectGenerator.generateComplexObjectArray());
+        String[] objectsImperative = flatMapMap.runImperativeForArray(objectGenerator.generateComplexObjectArray());
+        System.out.println(objectsStream[0]);
+        System.out.println(objectsStream.length);
+        System.out.println(objectsImperative[0]);
+        System.out.println(objectsImperative.length);
+
+        List<String> objectListStream = flatMapMap.runStreamForList(objectGenerator.generateComplexObjectList());
+        List<String> objectListImperative = flatMapMap.runImperativeForList(objectGenerator.generateComplexObjectList());
+        System.out.println(objectListStream.get(0));
+        System.out.println(objectListStream.size());
+        System.out.println(objectListImperative.get(0));
+        System.out.println(objectListImperative.size());
     }
 
     private void runFlatMapReduce() {
