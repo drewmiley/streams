@@ -31,8 +31,6 @@ public class ChainingMethodsRunner extends Runner {
         runMapReduce();
         System.out.println("    -Map, Sorted");
         runMapSorted();
-        System.out.println("    -Sorted, Filter");
-        runSortedFilter();
         System.out.println("    -Sorted, FlatMap");
         runSortedFlatMap();
         System.out.println("    -Sorted, Map");
@@ -229,26 +227,36 @@ public class ChainingMethodsRunner extends Runner {
         SimpleObject[] simpleObjects = objectGenerator.generateSimpleObjectArray();
         String[] objectsStream = mapSorted.runStreamForArray(simpleObjects);
         String[] objectsImperative = mapSorted.runImperativeForArray(simpleObjects);
-        System.out.println(objectsStream[0]);
-        System.out.println(objectsStream.length);
-        System.out.println(objectsImperative[0]);
-        System.out.println(objectsImperative.length);
+//        System.out.println(objectsStream[0]);
+//        System.out.println(objectsStream.length);
+//        System.out.println(objectsImperative[0]);
+//        System.out.println(objectsImperative.length);
 
         List<SimpleObject> simpleObjectList = objectGenerator.generateSimpleObjectList();
         List<String> objectListStream = mapSorted.runStreamForList(simpleObjectList);
         List<String> objectListImperative = mapSorted.runImperativeForList(simpleObjectList);
-        System.out.println(objectListStream.get(0));
-        System.out.println(objectListStream.size());
-        System.out.println(objectListImperative.get(0));
-        System.out.println(objectListImperative.size());
-    }
-
-    private void runSortedFilter() {
-
+//        System.out.println(objectListStream.get(0));
+//        System.out.println(objectListStream.size());
+//        System.out.println(objectListImperative.get(0));
+//        System.out.println(objectListImperative.size());
     }
 
     private void runSortedFlatMap() {
+        SortedFlatMap sortedFlatMap = new SortedFlatMap();
 
+        SimpleObject[] objectsStream = sortedFlatMap.runStreamForArray(objectGenerator.generateComplexObjectArray());
+        SimpleObject[] objectsImperative = sortedFlatMap.runImperativeForArray(objectGenerator.generateComplexObjectArray());
+        System.out.println(objectsStream[0].getNumber() + objectsStream[0].getText());
+        System.out.println(objectsStream.length);
+        System.out.println(objectsImperative[0].getNumber() + objectsImperative[0].getText());
+        System.out.println(objectsImperative.length);
+
+        List<SimpleObject> objectListStream = sortedFlatMap.runStreamForList(objectGenerator.generateComplexObjectList());
+        List<SimpleObject> objectListImperative = sortedFlatMap.runImperativeForList(objectGenerator.generateComplexObjectList());
+        System.out.println(objectListStream.get(0).getNumber() + objectListStream.get(0).getText());
+        System.out.println(objectListStream.size());
+        System.out.println(objectListImperative.get(0).getNumber() + objectListImperative.get(0).getText());
+        System.out.println(objectListImperative.size());
     }
 
     private void runSortedMap() {
