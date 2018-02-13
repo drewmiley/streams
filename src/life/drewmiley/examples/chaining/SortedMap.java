@@ -23,36 +23,36 @@ public class SortedMap {
 
     public String[] runStreamForArray(SimpleObject[] simpleObjects) {
         return Arrays.stream(simpleObjects)
-                .filter(simpleObject -> arbitraryFilter(simpleObject))
+                .sorted(this::arbitrarySorter)
                 .map(simpleObject -> arbitraryMapper(simpleObject))
                 .toArray(String[]::new);
     }
 
     public String[] runImperativeForArray(SimpleObject[] simpleObjects) {
+        SimpleObject[] inputArray = Arrays.copyOf(simpleObjects, simpleObjects.length);
+        Arrays.sort(inputArray, this::arbitrarySorter);
         String[] result = new String[0];
-        for (int i = 0; i < simpleObjects.length; i++) {
-            SimpleObject simpleObject = simpleObjects[i];
-            if (arbitraryFilter(simpleObject)) {
-                result = Arrays.copyOf(result, result.length + 1);
-                result[result.length - 1] = arbitraryMapper(simpleObject);
-            }
+        for (int i = 0; i < inputArray.length; i++) {
+            SimpleObject simpleObject = inputArray[i];
+            result = Arrays.copyOf(result, result.length + 1);
+            result[result.length - 1] = arbitraryMapper(simpleObject);
         }
         return result;
     }
 
     public List<String> runStreamForList(List<SimpleObject> simpleObjectList) {
         return simpleObjectList.stream()
-                .filter(simpleObject -> arbitraryFilter(simpleObject))
+                .sorted(this::arbitrarySorter)
                 .map(simpleObject -> arbitraryMapper(simpleObject))
                 .collect(Collectors.toList());
     }
 
     public List<String> runImperativeForList(List<SimpleObject> simpleObjectList) {
+        List<SimpleObject> inputList = new ArrayList<>(simpleObjectList);
+        inputList.sort(this::arbitrarySorter);
         List<String> result = new ArrayList<>();
-        for (SimpleObject simpleObject : simpleObjectList) {
-            if (arbitraryFilter(simpleObject)) {
-                result.add(arbitraryMapper(simpleObject));
-            }
+        for (SimpleObject simpleObject : inputList) {
+            result.add(arbitraryMapper(simpleObject));
         }
         return result;
     }

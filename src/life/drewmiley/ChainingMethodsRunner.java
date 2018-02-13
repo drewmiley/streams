@@ -265,22 +265,34 @@ public class ChainingMethodsRunner extends Runner {
         SimpleObject[] simpleObjects = objectGenerator.generateSimpleObjectArray();
         String[] objectsStream = sortedMap.runStreamForArray(simpleObjects);
         String[] objectsImperative = sortedMap.runImperativeForArray(simpleObjects);
-        System.out.println(objectsStream[0]);
-        System.out.println(objectsStream.length);
-        System.out.println(objectsImperative[0]);
-        System.out.println(objectsImperative.length);
+//        System.out.println(objectsStream[0]);
+//        System.out.println(objectsStream.length);
+//        System.out.println(objectsImperative[0]);
+//        System.out.println(objectsImperative.length);
 
         List<SimpleObject> simpleObjectList = objectGenerator.generateSimpleObjectList();
         List<String> objectListStream = sortedMap.runStreamForList(simpleObjectList);
         List<String> objectListImperative = sortedMap.runImperativeForList(simpleObjectList);
-        System.out.println(objectListStream.get(0));
-        System.out.println(objectListStream.size());
-        System.out.println(objectListImperative.get(0));
-        System.out.println(objectListImperative.size());
+//        System.out.println(objectListStream.get(0));
+//        System.out.println(objectListStream.size());
+//        System.out.println(objectListImperative.get(0));
+//        System.out.println(objectListImperative.size());
     }
 
     private void runSortedReduce() {
+        SortedReduce sortedReduce = new SortedReduce();
 
+        SimpleObject[] simpleObjects = objectGenerator.generateSimpleObjectArray();
+        SimpleObject objectsStream = sortedReduce.runStreamForArray(simpleObjects);
+        SimpleObject objectsImperative = sortedReduce.runImperativeForArray(simpleObjects);
+        System.out.println(objectsStream.getNumber() + objectsStream.getText());
+        System.out.println(objectsImperative.getNumber() + objectsImperative.getText());
+
+        List<SimpleObject> simpleObjectList = objectGenerator.generateSimpleObjectList();
+        SimpleObject objectListStream = sortedReduce.runStreamForList(simpleObjectList);
+        SimpleObject objectListImperative = sortedReduce.runImperativeForList(simpleObjectList);
+        System.out.println(objectListStream.getNumber() + objectListStream.getText());
+        System.out.println(objectListImperative.getNumber() + objectListImperative.getText());
     }
 
     private void runFilterFlatMapMapSortedReduce() {
