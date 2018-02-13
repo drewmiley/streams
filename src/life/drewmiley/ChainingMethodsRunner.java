@@ -213,18 +213,34 @@ public class ChainingMethodsRunner extends Runner {
         SimpleObject[] simpleObjects = objectGenerator.generateSimpleObjectArray();
         String objectsStream = mapReduce.runStreamForArray(simpleObjects);
         String objectsImperative = mapReduce.runImperativeForArray(simpleObjects);
-        System.out.println(objectsStream);
-        System.out.println(objectsImperative);
+//        System.out.println(objectsStream);
+//        System.out.println(objectsImperative);
 
         List<SimpleObject> simpleObjectList = objectGenerator.generateSimpleObjectList();
         String objectListStream = mapReduce.runStreamForList(simpleObjectList);
         String objectListImperative = mapReduce.runStreamForImperative(simpleObjectList);
-        System.out.println(objectListStream);
-        System.out.println(objectListImperative);
+//        System.out.println(objectListStream);
+//        System.out.println(objectListImperative);
     }
 
     private void runMapSorted() {
+        MapSorted mapSorted = new MapSorted();
 
+        SimpleObject[] simpleObjects = objectGenerator.generateSimpleObjectArray();
+        String[] objectsStream = mapSorted.runStreamForArray(simpleObjects);
+        String[] objectsImperative = mapSorted.runImperativeForArray(simpleObjects);
+        System.out.println(objectsStream[0]);
+        System.out.println(objectsStream.length);
+        System.out.println(objectsImperative[0]);
+        System.out.println(objectsImperative.length);
+
+        List<SimpleObject> simpleObjectList = objectGenerator.generateSimpleObjectList();
+        List<String> objectListStream = mapSorted.runStreamForList(simpleObjectList);
+        List<String> objectListImperative = mapSorted.runImperativeForList(simpleObjectList);
+        System.out.println(objectListStream.get(0));
+        System.out.println(objectListStream.size());
+        System.out.println(objectListImperative.get(0));
+        System.out.println(objectListImperative.size());
     }
 
     private void runSortedFilter() {
