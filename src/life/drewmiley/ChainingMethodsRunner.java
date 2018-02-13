@@ -193,22 +193,34 @@ public class ChainingMethodsRunner extends Runner {
         SimpleObject[] simpleObjects = objectGenerator.generateSimpleObjectArray();
         String[] objectsStream = mapFilter.runStreamForArray(simpleObjects);
         String[] objectsImperative = mapFilter.runImperativeForArray(simpleObjects);
-        System.out.println(objectsStream[0]);
-        System.out.println(objectsStream.length);
-        System.out.println(objectsImperative[0]);
-        System.out.println(objectsImperative.length);
+//        System.out.println(objectsStream[0]);
+//        System.out.println(objectsStream.length);
+//        System.out.println(objectsImperative[0]);
+//        System.out.println(objectsImperative.length);
 
         List<SimpleObject> simpleObjectList = objectGenerator.generateSimpleObjectList();
         List<String> objectListStream = mapFilter.runStreamForList(simpleObjectList);
         List<String> objectListImperative = mapFilter.runImperativeForList(simpleObjectList);
-        System.out.println(objectListStream.get(0));
-        System.out.println(objectListStream.size());
-        System.out.println(objectListImperative.get(0));
-        System.out.println(objectListImperative.size());
+//        System.out.println(objectListStream.get(0));
+//        System.out.println(objectListStream.size());
+//        System.out.println(objectListImperative.get(0));
+//        System.out.println(objectListImperative.size());
     }
 
     private void runMapReduce() {
+        MapReduce mapReduce = new MapReduce();
 
+        SimpleObject[] simpleObjects = objectGenerator.generateSimpleObjectArray();
+        String objectsStream = mapReduce.runStreamForArray(simpleObjects);
+        String objectsImperative = mapReduce.runImperativeForArray(simpleObjects);
+        System.out.println(objectsStream);
+        System.out.println(objectsImperative);
+
+        List<SimpleObject> simpleObjectList = objectGenerator.generateSimpleObjectList();
+        String objectListStream = mapReduce.runStreamForList(simpleObjectList);
+        String objectListImperative = mapReduce.runStreamForImperative(simpleObjectList);
+        System.out.println(objectListStream);
+        System.out.println(objectListImperative);
     }
 
     private void runMapSorted() {
