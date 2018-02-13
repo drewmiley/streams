@@ -8,7 +8,7 @@ import java.util.List;
 public class ForEach {
 
     private void arbitraryFunction(SimpleObject simpleObject) {
-//        System.out.println(simpleObject.getNumber() + simpleObject.getText());
+        System.out.println(simpleObject.getNumber() + simpleObject.getText());
     }
 
     public void runStreamForArray(SimpleObject[] simpleObjects) {
