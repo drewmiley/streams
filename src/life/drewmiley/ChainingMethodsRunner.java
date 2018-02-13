@@ -246,21 +246,37 @@ public class ChainingMethodsRunner extends Runner {
 
         SimpleObject[] objectsStream = sortedFlatMap.runStreamForArray(objectGenerator.generateComplexObjectArray());
         SimpleObject[] objectsImperative = sortedFlatMap.runImperativeForArray(objectGenerator.generateComplexObjectArray());
-        System.out.println(objectsStream[0].getNumber() + objectsStream[0].getText());
-        System.out.println(objectsStream.length);
-        System.out.println(objectsImperative[0].getNumber() + objectsImperative[0].getText());
-        System.out.println(objectsImperative.length);
+//        System.out.println(objectsStream[0].getNumber() + objectsStream[0].getText());
+//        System.out.println(objectsStream.length);
+//        System.out.println(objectsImperative[0].getNumber() + objectsImperative[0].getText());
+//        System.out.println(objectsImperative.length);
 
         List<SimpleObject> objectListStream = sortedFlatMap.runStreamForList(objectGenerator.generateComplexObjectList());
         List<SimpleObject> objectListImperative = sortedFlatMap.runImperativeForList(objectGenerator.generateComplexObjectList());
-        System.out.println(objectListStream.get(0).getNumber() + objectListStream.get(0).getText());
-        System.out.println(objectListStream.size());
-        System.out.println(objectListImperative.get(0).getNumber() + objectListImperative.get(0).getText());
-        System.out.println(objectListImperative.size());
+//        System.out.println(objectListStream.get(0).getNumber() + objectListStream.get(0).getText());
+//        System.out.println(objectListStream.size());
+//        System.out.println(objectListImperative.get(0).getNumber() + objectListImperative.get(0).getText());
+//        System.out.println(objectListImperative.size());
     }
 
     private void runSortedMap() {
+        SortedMap sortedMap = new SortedMap();
 
+        SimpleObject[] simpleObjects = objectGenerator.generateSimpleObjectArray();
+        String[] objectsStream = sortedMap.runStreamForArray(simpleObjects);
+        String[] objectsImperative = sortedMap.runImperativeForArray(simpleObjects);
+        System.out.println(objectsStream[0]);
+        System.out.println(objectsStream.length);
+        System.out.println(objectsImperative[0]);
+        System.out.println(objectsImperative.length);
+
+        List<SimpleObject> simpleObjectList = objectGenerator.generateSimpleObjectList();
+        List<String> objectListStream = sortedMap.runStreamForList(simpleObjectList);
+        List<String> objectListImperative = sortedMap.runImperativeForList(simpleObjectList);
+        System.out.println(objectListStream.get(0));
+        System.out.println(objectListStream.size());
+        System.out.println(objectListImperative.get(0));
+        System.out.println(objectListImperative.size());
     }
 
     private void runSortedReduce() {
