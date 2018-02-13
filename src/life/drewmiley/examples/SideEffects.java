@@ -26,7 +26,7 @@ public class SideEffects {
                     arbitrarySideEffect();
                     return dummyMap(simpleObject);
                 }).toArray(SimpleObject[]::new);
-//        System.out.println(number);
+        System.out.println(number);
         return result;
     }
 
@@ -38,7 +38,7 @@ public class SideEffects {
             arbitrarySideEffect();
             result[i] = dummyMap(simpleObject);
         }
-//        System.out.println(number);
+        System.out.println(number);
         return result;
     }
 
@@ -49,7 +49,7 @@ public class SideEffects {
                     arbitrarySideEffect();
                     return dummyMap(simpleObject);
                 }).collect(Collectors.toList());
-//        System.out.println(number);
+        System.out.println(number);
         return result;
     }
 
@@ -60,7 +60,7 @@ public class SideEffects {
             arbitrarySideEffect();
             result.add(dummyMap(simpleObject));
         }
-//        System.out.println(number);
+        System.out.println(number);
         return result;
     }
 }
