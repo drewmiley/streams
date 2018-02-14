@@ -2,6 +2,7 @@ package life.drewmiley;
 
 import life.drewmiley.examples.helper.ExampleRunner;
 import life.drewmiley.examples.helper.SimpleObject;
+import life.drewmiley.examples.impure.SideEffects;
 import life.drewmiley.examples.single.*;
 
 import java.util.List;
