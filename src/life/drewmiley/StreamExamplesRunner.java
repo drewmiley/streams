@@ -1,11 +1,12 @@
 package life.drewmiley;
 
 import life.drewmiley.examples.*;
-import life.drewmiley.objects.SimpleObject;
+import life.drewmiley.examples.helper.ExampleRunner;
+import life.drewmiley.examples.helper.SimpleObject;
 
 import java.util.List;
 
-public class StreamExamplesRunner extends Runner {
+public class StreamExamplesRunner extends ExampleRunner {
 
     public void run() {
         System.out.println("Running forEach example");

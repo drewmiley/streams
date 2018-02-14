@@ -1,6 +1,6 @@
 package life.drewmiley.examples.chaining;
 
-import life.drewmiley.objects.SimpleObject;
+import life.drewmiley.examples.helper.SimpleObject;
 
 import java.util.ArrayList;
 import java.util.Arrays;

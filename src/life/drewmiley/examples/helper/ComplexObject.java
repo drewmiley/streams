@@ -1,4 +1,4 @@
-package life.drewmiley.objects;
+package life.drewmiley.examples.helper;
 
 import java.util.List;
 
