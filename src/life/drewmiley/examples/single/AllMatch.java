@@ -1,14 +1,14 @@
-package life.drewmiley.examples;
+package life.drewmiley.examples.single;
 
 import life.drewmiley.examples.helper.SimpleObject;
 
 import java.util.Arrays;
 import java.util.List;
 
-public class AnyMatch {
+public class AllMatch {
 
-    private boolean evilFilter(SimpleObject simpleObject) {
-        return simpleObject.getNumber() > 1000000;
+    private boolean niceFilter(SimpleObject simpleObject) {
+        return simpleObject.getText() != null;
     }
 
     private boolean arbitraryFilter(SimpleObject simpleObject) {
@@ -17,34 +17,34 @@ public class AnyMatch {
 
     public boolean runStreamForArray(SimpleObject[] simpleObjects) {
         return Arrays.stream(simpleObjects)
-                .anyMatch(simpleObject -> arbitraryFilter(simpleObject));
+                .allMatch(simpleObject -> arbitraryFilter(simpleObject));
     }
 
     public boolean runImperativeForArray(SimpleObject[] simpleObjects) {
-        boolean anyMatch = false;
+        boolean allMatch = true;
         for (int i = 0; i < simpleObjects.length; i++) {
             SimpleObject simpleObject = simpleObjects[i];
-            if (arbitraryFilter(simpleObject)) {
-                anyMatch = true;
+            if (!arbitraryFilter(simpleObject)) {
+                allMatch = false;
                 break;
             }
         }
-        return anyMatch;
+        return allMatch;
     }
 
     public boolean runStreamForList(List<SimpleObject> simpleObjectList) {
         return simpleObjectList.stream()
-                .anyMatch(simpleObject -> arbitraryFilter(simpleObject));
+                .allMatch(simpleObject -> arbitraryFilter(simpleObject));
     }
 
     public boolean runImperativeForList(List<SimpleObject> simpleObjectList) {
-        boolean anyMatch = false;
+        boolean allMatch = true;
         for (SimpleObject simpleObject : simpleObjectList) {
-            if (arbitraryFilter(simpleObject)) {
-                anyMatch = true;
+            if (!arbitraryFilter(simpleObject)) {
+                allMatch = false;
                 break;
             }
         }
-        return anyMatch;
+        return allMatch;
     }
 }

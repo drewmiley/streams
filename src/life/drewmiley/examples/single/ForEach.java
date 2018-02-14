@@ -1,4 +1,4 @@
-package life.drewmiley.examples;
+package life.drewmiley.examples.single;
 
 import life.drewmiley.examples.helper.SimpleObject;
 
