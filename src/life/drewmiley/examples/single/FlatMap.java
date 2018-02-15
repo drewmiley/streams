@@ -1,7 +1,7 @@
-package life.drewmiley.examples;
+package life.drewmiley.examples.single;
 
-import life.drewmiley.objects.ComplexObject;
-import life.drewmiley.objects.SimpleObject;
+import life.drewmiley.examples.helper.ComplexObject;
+import life.drewmiley.examples.helper.SimpleObject;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class FlatMap {
+
     public SimpleObject[] runStreamForArray(ComplexObject[] complexObjects) {
         return Arrays.stream(complexObjects).flatMap(complexObject -> {
             List<SimpleObject> simpleObjectsList = complexObject.getSimpleObjectList();

@@ -1,6 +1,7 @@
-package life.drewmiley.examples;
+package life.drewmiley.examples.single;
 
-import life.drewmiley.objects.SimpleObject;
+import life.drewmiley.examples.helper.InlineFunctions;
+import life.drewmiley.examples.helper.SimpleObject;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -9,29 +10,25 @@ import java.util.stream.Collectors;
 
 public class Sorted {
 
-    private int arbitrarySorter(SimpleObject a, SimpleObject b) {
-        return a.getNumber() - b.getNumber();
-    }
-
     public SimpleObject[] runStreamForArray(SimpleObject[] simpleObjects) {
         return Arrays.stream(simpleObjects)
-                .sorted(this::arbitrarySorter).toArray(SimpleObject[]::new);
+                .sorted(InlineFunctions::arbitrarySorter).toArray(SimpleObject[]::new);
     }
 
     public SimpleObject[] runImperativeForArray(SimpleObject[] simpleObjects) {
         SimpleObject[] array = Arrays.copyOf(simpleObjects, simpleObjects.length);
-        Arrays.sort(array, this::arbitrarySorter);
+        Arrays.sort(array, InlineFunctions::arbitrarySorter);
         return array;
     }
 
     public List<SimpleObject> runStreamForList(List<SimpleObject> simpleObjects) {
         return simpleObjects.stream()
-                .sorted(this::arbitrarySorter).collect(Collectors.toList());
+                .sorted(InlineFunctions::arbitrarySorter).collect(Collectors.toList());
     }
 
     public List<SimpleObject> runImperativeForList(List<SimpleObject> simpleObjects) {
         List<SimpleObject> list = new ArrayList<>(simpleObjects);
-        list.sort(this::arbitrarySorter);
+        list.sort(InlineFunctions::arbitrarySorter);
         return list;
     }
 }

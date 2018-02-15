@@ -1,6 +1,6 @@
-package life.drewmiley.examples;
+package life.drewmiley.examples.impure;
 
-import life.drewmiley.objects.SimpleObject;
+import life.drewmiley.examples.helper.SimpleObject;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -15,7 +15,7 @@ public class SideEffects {
         return simpleObject;
     }
 
-    private void arbitrarySideEffect() {
+    private void sideEffect() {
         number *= 2;
     }
 
@@ -23,7 +23,7 @@ public class SideEffects {
         number = 1;
         SimpleObject[] result = Arrays.stream(simpleObjects)
                 .map(simpleObject -> {
-                    arbitrarySideEffect();
+                    sideEffect();
                     return dummyMap(simpleObject);
                 }).toArray(SimpleObject[]::new);
         System.out.println(number);
@@ -35,7 +35,7 @@ public class SideEffects {
         SimpleObject[] result = new SimpleObject[simpleObjects.length];
         for (int i = 0; i < simpleObjects.length; i++) {
             SimpleObject simpleObject = simpleObjects[i];
-            arbitrarySideEffect();
+            sideEffect();
             result[i] = dummyMap(simpleObject);
         }
         System.out.println(number);
@@ -46,7 +46,7 @@ public class SideEffects {
         number = 1;
         List<SimpleObject> result = simpleObjectList.stream()
                 .map(simpleObject -> {
-                    arbitrarySideEffect();
+                    sideEffect();
                     return dummyMap(simpleObject);
                 }).collect(Collectors.toList());
         System.out.println(number);
@@ -57,7 +57,7 @@ public class SideEffects {
         number = 1;
         List<SimpleObject> result = new ArrayList<>();
         for (SimpleObject simpleObject : simpleObjectList) {
-            arbitrarySideEffect();
+            sideEffect();
             result.add(dummyMap(simpleObject));
         }
         System.out.println(number);
