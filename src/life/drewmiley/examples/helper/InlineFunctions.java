@@ -14,6 +14,10 @@ public class InlineFunctions {
         return simpleObject.getText() != null;
     }
 
+    public static boolean arbitraryStringFilter(String value) {
+        return value.length() >= 8;
+    }
+
     public static void arbitraryFunction(SimpleObject simpleObject) {
         System.out.println(simpleObject.getNumber() + simpleObject.getText());
     }
@@ -28,6 +32,10 @@ public class InlineFunctions {
 
     public static int arbitrarySorter(SimpleObject a, SimpleObject b) {
         return a.getNumber() - b.getNumber();
+    }
+
+    public static int arbitraryStringSorter(String a, String b) {
+        return a.substring(1, 3).compareTo(b.substring(1, 3));
     }
 
     public static SimpleObject arbitraryAccumulator(SimpleObject a, SimpleObject b) {
