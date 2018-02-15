@@ -14,7 +14,7 @@ public class InlineFunctions {
         return simpleObject.getText() != null;
     }
 
-    public void arbitraryFunction(SimpleObject simpleObject) {
+    public static void arbitraryFunction(SimpleObject simpleObject) {
         System.out.println(simpleObject.getNumber() + simpleObject.getText());
     }
 

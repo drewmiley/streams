@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class FlatMap {
+
     public SimpleObject[] runStreamForArray(ComplexObject[] complexObjects) {
         return Arrays.stream(complexObjects).flatMap(complexObject -> {
             List<SimpleObject> simpleObjectsList = complexObject.getSimpleObjectList();
