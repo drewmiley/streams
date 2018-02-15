@@ -1,6 +1,7 @@
 package life.drewmiley.examples.chaining;
 
 import life.drewmiley.examples.helper.ComplexObject;
+import life.drewmiley.examples.helper.InlineFunctions;
 import life.drewmiley.examples.helper.SimpleObject;
 
 import java.util.Arrays;
@@ -8,14 +9,10 @@ import java.util.List;
 
 public class FlatMapReduce {
 
-    private SimpleObject arbitraryAccumulator(SimpleObject a, SimpleObject b) {
-        return new SimpleObject(a.getNumber() + b.getNumber(), a.getText() + b.getText());
-    }
-
     public SimpleObject runStreamForArray(ComplexObject[] complexObjects) {
         return Arrays.stream(complexObjects)
                 .flatMap(complexObject -> complexObject.getSimpleObjectList().stream())
-                .reduce(this::arbitraryAccumulator)
+                .reduce(InlineFunctions::arbitraryAccumulator)
                 .orElse(null);
     }
 
@@ -24,7 +21,7 @@ public class FlatMapReduce {
         for (int i = 0; i < complexObjects.length; i++) {
             List<SimpleObject> simpleObjectList = complexObjects[i].getSimpleObjectList();
             for (SimpleObject simpleObject : simpleObjectList) {
-                result = arbitraryAccumulator(result, simpleObject);
+                result = InlineFunctions.arbitraryAccumulator(result, simpleObject);
             }
         }
         return result;
@@ -33,7 +30,7 @@ public class FlatMapReduce {
     public SimpleObject runStreamForList(List<ComplexObject> complexObjects) {
         return complexObjects.stream()
                 .flatMap(complexObject -> complexObject.getSimpleObjectList().stream())
-                .reduce(this::arbitraryAccumulator)
+                .reduce(InlineFunctions::arbitraryAccumulator)
                 .orElse(null);
     }
 
@@ -42,7 +39,7 @@ public class FlatMapReduce {
         for (ComplexObject complexObject : complexObjects) {
             List<SimpleObject> simpleObjectList = complexObject.getSimpleObjectList();
             for (SimpleObject simpleObject : simpleObjectList) {
-                result = arbitraryAccumulator(result, simpleObject);
+                result = InlineFunctions.arbitraryAccumulator(result, simpleObject);
             }
         }
         return result;

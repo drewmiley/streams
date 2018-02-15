@@ -1,6 +1,7 @@
 package life.drewmiley.examples.chaining;
 
 import life.drewmiley.examples.helper.ComplexObject;
+import life.drewmiley.examples.helper.InlineFunctions;
 import life.drewmiley.examples.helper.SimpleObject;
 
 import java.util.ArrayList;
@@ -10,18 +11,10 @@ import java.util.stream.Collectors;
 
 public class FlatMapMap {
 
-    private SimpleObject arbitraryObjectMapper(SimpleObject simpleObject) {
-        return new SimpleObject(simpleObject.getNumber() + 10, simpleObject.getText().toUpperCase());
-    }
-
-    private String arbitraryMapper(SimpleObject simpleObject) {
-        return (simpleObject.getNumber() + 10) + simpleObject.getText().toUpperCase();
-    }
-
     public String[] runStreamForArray(ComplexObject[] complexObjects) {
         return Arrays.stream(complexObjects)
                 .flatMap(complexObject -> complexObject.getSimpleObjectList().stream())
-                .map(simpleObject -> arbitraryMapper(simpleObject))
+                .map(simpleObject -> InlineFunctions.arbitraryMapper(simpleObject))
                 .toArray(String[]::new);
     }
 
@@ -31,7 +24,7 @@ public class FlatMapMap {
             List<SimpleObject> simpleObjectList = complexObjects[i].getSimpleObjectList();
             for (SimpleObject simpleObject : simpleObjectList) {
                 result = Arrays.copyOf(result, result.length + 1);
-                result[result.length - 1] = arbitraryMapper(simpleObject);
+                result[result.length - 1] = InlineFunctions.arbitraryMapper(simpleObject);
             }
         }
         return result;
@@ -40,7 +33,7 @@ public class FlatMapMap {
     public List<String> runStreamForList(List<ComplexObject> complexObjectList) {
         return complexObjectList.stream()
                 .flatMap(complexObject -> complexObject.getSimpleObjectList().stream())
-                .map(simpleObject -> arbitraryMapper(simpleObject))
+                .map(simpleObject -> InlineFunctions.arbitraryMapper(simpleObject))
                 .collect(Collectors.toList());
     }
 
@@ -49,7 +42,7 @@ public class FlatMapMap {
         for (ComplexObject complexObject : complexObjectList) {
             List<SimpleObject> simpleObjectList = complexObject.getSimpleObjectList();
             for (SimpleObject simpleObject : simpleObjectList) {
-                result.add(arbitraryMapper(simpleObject));
+                result.add(InlineFunctions.arbitraryMapper(simpleObject));
             }
         }
         return result;
