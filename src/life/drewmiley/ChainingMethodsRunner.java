@@ -1,5 +1,6 @@
 package life.drewmiley;
 
+import life.drewmiley.examples.complexchaining.FilterFlatMapMapSortedReduce;
 import life.drewmiley.examples.helper.ExampleRunner;
 import life.drewmiley.examples.chaining.*;
 import life.drewmiley.examples.helper.SimpleObject;
@@ -38,6 +39,7 @@ public class ChainingMethodsRunner extends ExampleRunner {
         runSortedMap();
         System.out.println("    -Sorted, Reduce");
         runSortedReduce();
+        System.out.println("Running example of complex chaining methods");
         System.out.println("    -Filter, FlatMap, Map, Sorted, Reduce");
         runFilterFlatMapMapSortedReduce();
         System.out.println("    -Sorted, Map, Filter, Reduce");
@@ -297,7 +299,17 @@ public class ChainingMethodsRunner extends ExampleRunner {
     }
 
     private void runFilterFlatMapMapSortedReduce() {
+        FilterFlatMapMapSortedReduce filterFlatMapMapSortedReduce = new FilterFlatMapMapSortedReduce();
 
+        String objectsStream = filterFlatMapMapSortedReduce.runStreamForArray(objectGenerator.generateComplexObjectArray());
+        String objectsImperative = filterFlatMapMapSortedReduce.runImperatveForArray(objectGenerator.generateComplexObjectArray());
+        System.out.println(objectsStream);
+        System.out.println(objectsImperative);
+
+        String objectListStream = filterFlatMapMapSortedReduce.runStreamForList(objectGenerator.generateComplexObjectList());
+        String objectListImperative = filterFlatMapMapSortedReduce.runImperativeForList(objectGenerator.generateComplexObjectList());
+        System.out.println(objectListStream);
+        System.out.println(objectListImperative);
     }
 
     private void runSortedMapFilterReduce() {
