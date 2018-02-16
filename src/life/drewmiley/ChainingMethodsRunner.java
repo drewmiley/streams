@@ -1,6 +1,7 @@
 package life.drewmiley;
 
 import life.drewmiley.examples.complexchaining.FilterFlatMapMapSortedReduce;
+import life.drewmiley.examples.complexchaining.SortedMapFilterReduce;
 import life.drewmiley.examples.helper.ExampleRunner;
 import life.drewmiley.examples.chaining.*;
 import life.drewmiley.examples.helper.SimpleObject;
@@ -313,6 +314,18 @@ public class ChainingMethodsRunner extends ExampleRunner {
     }
 
     private void runSortedMapFilterReduce() {
+        SortedMapFilterReduce sortedMapFilterReduce = new SortedMapFilterReduce();
 
+        SimpleObject[] simpleObjects = objectGenerator.generateSimpleObjectArray();
+        String objectsStream = sortedMapFilterReduce.runStreamForArray(simpleObjects);
+        String objectsImperative = sortedMapFilterReduce.runImperativeForArray(simpleObjects);
+        System.out.println(objectsStream);
+        System.out.println(objectsImperative);
+
+        List<SimpleObject> simpleObjectList = objectGenerator.generateSimpleObjectList();
+        String objectListStream = sortedMapFilterReduce.runStreamForList(simpleObjectList);
+        String objectListImperative = sortedMapFilterReduce.runImperativeForList(simpleObjectList);
+        System.out.println(objectListStream);
+        System.out.println(objectListImperative);
     }
 }
