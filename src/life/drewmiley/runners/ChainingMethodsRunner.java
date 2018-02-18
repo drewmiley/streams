@@ -1,10 +1,10 @@
-package life.drewmiley;
+package life.drewmiley.runners;
 
 import life.drewmiley.examples.complexchaining.FilterFlatMapMapSortedReduce;
 import life.drewmiley.examples.complexchaining.SortedMapFilterReduce;
-import life.drewmiley.examples.helper.ExampleRunner;
+import life.drewmiley.helper.ExampleRunner;
 import life.drewmiley.examples.chaining.*;
-import life.drewmiley.examples.helper.SimpleObject;
+import life.drewmiley.helper.SimpleObject;
 
 import java.util.List;
 

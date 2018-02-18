@@ -1,4 +1,4 @@
-package life.drewmiley.examples.helper;
+package life.drewmiley.helper;
 
 public abstract class ExampleRunner {
 

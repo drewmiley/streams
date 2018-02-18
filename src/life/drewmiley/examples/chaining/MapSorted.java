@@ -1,11 +1,10 @@
 package life.drewmiley.examples.chaining;
 
-import life.drewmiley.examples.helper.InlineFunctions;
-import life.drewmiley.examples.helper.SimpleObject;
+import life.drewmiley.helper.InlineFunctions;
+import life.drewmiley.helper.SimpleObject;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 

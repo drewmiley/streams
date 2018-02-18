@@ -1,7 +1,7 @@
 package life.drewmiley.examples.single;
 
-import life.drewmiley.examples.helper.InlineFunctions;
-import life.drewmiley.examples.helper.SimpleObject;
+import life.drewmiley.helper.InlineFunctions;
+import life.drewmiley.helper.SimpleObject;
 
 import java.util.Arrays;
 import java.util.List;

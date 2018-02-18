@@ -1,8 +1,8 @@
 package life.drewmiley.examples.chaining;
 
-import life.drewmiley.examples.helper.ComplexObject;
-import life.drewmiley.examples.helper.InlineFunctions;
-import life.drewmiley.examples.helper.SimpleObject;
+import life.drewmiley.helper.ComplexObject;
+import life.drewmiley.helper.InlineFunctions;
+import life.drewmiley.helper.SimpleObject;
 
 import java.util.ArrayList;
 import java.util.Arrays;

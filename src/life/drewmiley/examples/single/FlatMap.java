@@ -1,7 +1,7 @@
 package life.drewmiley.examples.single;
 
-import life.drewmiley.examples.helper.ComplexObject;
-import life.drewmiley.examples.helper.SimpleObject;
+import life.drewmiley.helper.ComplexObject;
+import life.drewmiley.helper.SimpleObject;
 
 import java.util.ArrayList;
 import java.util.Arrays;
