@@ -6,7 +6,7 @@ import life.drewmiley.helper.SimpleObject;
 import java.util.List;
 
 public class FlatMap {
-    public static void runFlatMap(ObjectGenerator objectGenerator) {
+    public static void run(ObjectGenerator objectGenerator) {
         System.out.println("Running flatMap example");
         life.drewmiley.examples.single.FlatMap flatMap = new life.drewmiley.examples.single.FlatMap();
 

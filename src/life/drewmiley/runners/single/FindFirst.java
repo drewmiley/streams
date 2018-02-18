@@ -6,7 +6,7 @@ import life.drewmiley.helper.SimpleObject;
 import java.util.List;
 
 public class FindFirst {
-    public static void runFindFirst(ObjectGenerator objectGenerator) {
+    public static void run(ObjectGenerator objectGenerator) {
         System.out.println("Running findFirst example");
         life.drewmiley.examples.single.FindFirst findFirst = new life.drewmiley.examples.single.FindFirst();
 

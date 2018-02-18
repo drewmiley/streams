@@ -6,7 +6,7 @@ import life.drewmiley.helper.SimpleObject;
 import java.util.List;
 
 public class Map {
-    public static void runMap(ObjectGenerator objectGenerator) {
+    public static void run(ObjectGenerator objectGenerator) {
         System.out.println("Running map example");
         life.drewmiley.examples.single.Map map = new life.drewmiley.examples.single.Map();
 

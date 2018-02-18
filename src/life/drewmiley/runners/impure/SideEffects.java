@@ -6,7 +6,7 @@ import life.drewmiley.helper.SimpleObject;
 import java.util.List;
 
 public class SideEffects {
-    public static void runSideEffects(ObjectGenerator objectGenerator) {
+    public static void run(ObjectGenerator objectGenerator) {
         System.out.println("Running example of side effects");
         life.drewmiley.examples.impure.SideEffects sideEffects = new life.drewmiley.examples.impure.SideEffects();
 

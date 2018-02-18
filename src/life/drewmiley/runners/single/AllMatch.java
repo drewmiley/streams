@@ -6,7 +6,7 @@ import life.drewmiley.helper.SimpleObject;
 import java.util.List;
 
 public class AllMatch {
-    public static void runAllMatch(ObjectGenerator objectGenerator) {
+    public static void run(ObjectGenerator objectGenerator) {
         System.out.println("Running allMatch example");
         life.drewmiley.examples.single.AllMatch allMatch = new life.drewmiley.examples.single.AllMatch();
 

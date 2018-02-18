@@ -6,7 +6,7 @@ import life.drewmiley.helper.SimpleObject;
 import java.util.List;
 
 public class Filter {
-    public static void runFilter(ObjectGenerator objectGenerator) {
+    public static void run(ObjectGenerator objectGenerator) {
         System.out.println("Running filter example");
         life.drewmiley.examples.single.Filter filter = new life.drewmiley.examples.single.Filter();
 

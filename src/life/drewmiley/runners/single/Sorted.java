@@ -6,7 +6,7 @@ import life.drewmiley.helper.SimpleObject;
 import java.util.List;
 
 public class Sorted {
-    public static void runSorted(ObjectGenerator objectGenerator) {
+    public static void run(ObjectGenerator objectGenerator) {
         System.out.println("Running sorted example");
         life.drewmiley.examples.single.Sorted sorted = new life.drewmiley.examples.single.Sorted();
 

@@ -4,7 +4,7 @@ import life.drewmiley.helper.ObjectGenerator;
 import life.drewmiley.helper.SimpleObject;
 
 public class Reduce {
-    public static void runReduce(ObjectGenerator objectGenerator) {
+    public static void run(ObjectGenerator objectGenerator) {
         System.out.println("Running reduce example");
         life.drewmiley.examples.single.Reduce reduce = new life.drewmiley.examples.single.Reduce();
 

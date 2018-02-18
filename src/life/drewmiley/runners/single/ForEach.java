@@ -6,7 +6,7 @@ import life.drewmiley.helper.SimpleObject;
 import java.util.List;
 
 public class ForEach {
-    public static void runForEach(ObjectGenerator objectGenerator) {
+    public static void run(ObjectGenerator objectGenerator) {
         System.out.println("Running forEach example");
         life.drewmiley.examples.single.ForEach forEach = new life.drewmiley.examples.single.ForEach();
 
