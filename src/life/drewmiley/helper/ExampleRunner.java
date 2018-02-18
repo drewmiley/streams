@@ -7,6 +7,4 @@ public abstract class ExampleRunner {
     public ExampleRunner() {
         this.objectGenerator = new ObjectGenerator();
     }
-
-    public abstract void run();
 }
