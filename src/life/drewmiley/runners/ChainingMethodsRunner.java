@@ -12,42 +12,27 @@ public class ChainingMethodsRunner extends ExampleRunner {
 
     public void run() {
         System.out.println("Running example of chaining methods");
-        System.out.println("    -Filter, FlatMap");
         runFilterFlatMap();
-        System.out.println("    -Filter, Map");
         runFilterMap();
-        System.out.println("    -Filter, Reduce");
         runFilterReduce();
-        System.out.println("    -Filter, Sorted");
         runFilterSorted();
-        System.out.println("    -FlatMap, Filter");
         runFlatMapFilter();
-        System.out.println("    -FlatMap, Map");
         runFlatMapMap();
-        System.out.println("    -FlatMap, Reduce");
         runFlatMapReduce();
-        System.out.println("    -FlatMap, Sorted");
         runFlatMapSorted();
-        System.out.println("    -Map, Filter");
         runMapFilter();
-        System.out.println("    -Map, Reduce");
         runMapReduce();
-        System.out.println("    -Map, Sorted");
         runMapSorted();
-        System.out.println("    -Sorted, FlatMap");
         runSortedFlatMap();
-        System.out.println("    -Sorted, Map");
         runSortedMap();
-        System.out.println("    -Sorted, Reduce");
         runSortedReduce();
         System.out.println("Running example of complex chaining methods");
-        System.out.println("    -Filter, FlatMap, Map, Sorted, Reduce");
         runFilterFlatMapMapSortedReduce();
-        System.out.println("    -Sorted, Map, Filter, Reduce");
         runSortedMapFilterReduce();
     }
 
     private void runFilterFlatMap() {
+        System.out.println("    -Filter, FlatMap");
         FilterFlatMap filterFlatMap = new FilterFlatMap();
 
         SimpleObject[] objectsStream = filterFlatMap.runStreamForArray(objectGenerator.generateComplexObjectArray());
@@ -66,6 +51,7 @@ public class ChainingMethodsRunner extends ExampleRunner {
     }
 
     private void runFilterMap() {
+        System.out.println("    -Filter, Map");
         FilterMap filterMap = new FilterMap();
 
         SimpleObject[] simpleObjects = objectGenerator.generateSimpleObjectArray();
@@ -86,6 +72,7 @@ public class ChainingMethodsRunner extends ExampleRunner {
     }
 
     private void runFilterReduce() {
+        System.out.println("    -Filter, Reduce");
         FilterReduce filterReduce = new FilterReduce();
 
         SimpleObject[] simpleObjects = objectGenerator.generateSimpleObjectArray();
@@ -102,6 +89,7 @@ public class ChainingMethodsRunner extends ExampleRunner {
     }
 
     private void runFilterSorted() {
+        System.out.println("    -Filter, Sorted");
         FilterSorted filterSorted = new FilterSorted();
 
         SimpleObject[] simpleObjects = objectGenerator.generateSimpleObjectArray();
@@ -122,6 +110,7 @@ public class ChainingMethodsRunner extends ExampleRunner {
     }
 
     private void runFlatMapFilter() {
+        System.out.println("    -FlatMap, Filter");
         FlatMapFilter flatMapFilter = new FlatMapFilter();
 
         SimpleObject[] objectsStream = flatMapFilter.runStreamForArray(objectGenerator.generateComplexObjectArray());
@@ -140,6 +129,7 @@ public class ChainingMethodsRunner extends ExampleRunner {
     }
 
     private void runFlatMapMap() {
+        System.out.println("    -FlatMap, Map");
         FlatMapMap flatMapMap = new FlatMapMap();
 
         String[] objectsStream = flatMapMap.runStreamForArray(objectGenerator.generateComplexObjectArray());
@@ -158,6 +148,7 @@ public class ChainingMethodsRunner extends ExampleRunner {
     }
 
     private void runFlatMapReduce() {
+        System.out.println("    -FlatMap, Reduce");
         FlatMapReduce flatMapReduce = new FlatMapReduce();
 
         SimpleObject objectsStream = flatMapReduce.runStreamForArray(objectGenerator.generateComplexObjectArray());
@@ -172,6 +163,7 @@ public class ChainingMethodsRunner extends ExampleRunner {
     }
 
     private void runFlatMapSorted() {
+        System.out.println("    -FlatMap, Sorted");
         FlatMapSorted flatMapSorted = new FlatMapSorted();
 
         SimpleObject[] objectsStream = flatMapSorted.runStreamForArray(objectGenerator.generateComplexObjectArray());
@@ -190,6 +182,7 @@ public class ChainingMethodsRunner extends ExampleRunner {
     }
 
     private void runMapFilter() {
+        System.out.println("    -Map, Filter");
         MapFilter mapFilter = new MapFilter();
 
         SimpleObject[] simpleObjects = objectGenerator.generateSimpleObjectArray();
@@ -210,6 +203,7 @@ public class ChainingMethodsRunner extends ExampleRunner {
     }
 
     private void runMapReduce() {
+        System.out.println("    -Map, Reduce");
         MapReduce mapReduce = new MapReduce();
 
         SimpleObject[] simpleObjects = objectGenerator.generateSimpleObjectArray();
@@ -226,6 +220,7 @@ public class ChainingMethodsRunner extends ExampleRunner {
     }
 
     private void runMapSorted() {
+        System.out.println("    -Map, Sorted");
         MapSorted mapSorted = new MapSorted();
 
         SimpleObject[] simpleObjects = objectGenerator.generateSimpleObjectArray();
@@ -246,6 +241,7 @@ public class ChainingMethodsRunner extends ExampleRunner {
     }
 
     private void runSortedFlatMap() {
+        System.out.println("    -Sorted, FlatMap");
         SortedFlatMap sortedFlatMap = new SortedFlatMap();
 
         SimpleObject[] objectsStream = sortedFlatMap.runStreamForArray(objectGenerator.generateComplexObjectArray());
@@ -264,6 +260,7 @@ public class ChainingMethodsRunner extends ExampleRunner {
     }
 
     private void runSortedMap() {
+        System.out.println("    -Sorted, Map");
         SortedMap sortedMap = new SortedMap();
 
         SimpleObject[] simpleObjects = objectGenerator.generateSimpleObjectArray();
@@ -284,6 +281,7 @@ public class ChainingMethodsRunner extends ExampleRunner {
     }
 
     private void runSortedReduce() {
+        System.out.println("    -Sorted, Reduce");
         SortedReduce sortedReduce = new SortedReduce();
 
         SimpleObject[] simpleObjects = objectGenerator.generateSimpleObjectArray();
@@ -300,6 +298,7 @@ public class ChainingMethodsRunner extends ExampleRunner {
     }
 
     private void runFilterFlatMapMapSortedReduce() {
+        System.out.println("    -Filter, FlatMap, Map, Sorted, Reduce");
         FilterFlatMapMapSortedReduce filterFlatMapMapSortedReduce = new FilterFlatMapMapSortedReduce();
 
         String objectsStream = filterFlatMapMapSortedReduce.runStreamForArray(objectGenerator.generateComplexObjectArray());
@@ -314,6 +313,7 @@ public class ChainingMethodsRunner extends ExampleRunner {
     }
 
     private void runSortedMapFilterReduce() {
+        System.out.println("    -Sorted, Map, Filter, Reduce");
         SortedMapFilterReduce sortedMapFilterReduce = new SortedMapFilterReduce();
 
         SimpleObject[] simpleObjects = objectGenerator.generateSimpleObjectArray();
