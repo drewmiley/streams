@@ -10,31 +10,21 @@ import java.util.List;
 public class StreamExamplesRunner extends ExampleRunner {
 
     public void run() {
-        System.out.println("Running forEach example");
         runForEach();
-        System.out.println("Running map example");
         runMap();
-        System.out.println("Running filter example");
         runFilter();
-        System.out.println("Running findFirst example");
         runFindFirst();
-        System.out.println("Running anyMatch example");
         runAnyMatch();
-        System.out.println("Running allMatch example");
         runAllMatch();
-        System.out.println("Running flatMap example");
         runFlatMap();
-        System.out.println("Running sorted example");
         runSorted();
-        System.out.println("Running max example");
         runMax();
-        System.out.println("Running reduce example");
         runReduce();
-        System.out.println("Running example of side effects");
         runSideEffects();
     }
 
     private void runForEach() {
+        System.out.println("Running forEach example");
         ForEach forEach = new ForEach();
 
         SimpleObject[] simpleObjects = objectGenerator.generateSimpleObjectArray();
@@ -47,6 +37,7 @@ public class StreamExamplesRunner extends ExampleRunner {
     }
 
     private void runMap() {
+        System.out.println("Running map example");
         Map map = new Map();
 
         SimpleObject[] simpleObjects = objectGenerator.generateSimpleObjectArray();
@@ -63,6 +54,7 @@ public class StreamExamplesRunner extends ExampleRunner {
     }
 
     private void runFilter() {
+        System.out.println("Running filter example");
         Filter filter = new Filter();
 
         SimpleObject[] simpleObjects = objectGenerator.generateSimpleObjectArray();
@@ -83,6 +75,7 @@ public class StreamExamplesRunner extends ExampleRunner {
     }
 
     private void runFindFirst() {
+        System.out.println("Running findFirst example");
         FindFirst findFirst = new FindFirst();
 
         SimpleObject[] simpleObjects = objectGenerator.generateSimpleObjectArray();
@@ -99,6 +92,7 @@ public class StreamExamplesRunner extends ExampleRunner {
     }
 
     private void runAnyMatch() {
+        System.out.println("Running anyMatch example");
         AnyMatch anyMatch = new AnyMatch();
 
         SimpleObject[] simpleObjects = objectGenerator.generateSimpleObjectArray();
@@ -115,6 +109,7 @@ public class StreamExamplesRunner extends ExampleRunner {
     }
 
     private void runAllMatch() {
+        System.out.println("Running allMatch example");
         AllMatch allMatch = new AllMatch();
 
         SimpleObject[] simpleObjects = objectGenerator.generateSimpleObjectArray();
@@ -131,6 +126,7 @@ public class StreamExamplesRunner extends ExampleRunner {
     }
 
     private void runFlatMap() {
+        System.out.println("Running flatMap example");
         FlatMap flatMap = new FlatMap();
 
         SimpleObject[] flatMapObjectsStream = flatMap.runStreamForArray(objectGenerator.generateComplexObjectArray());
@@ -149,6 +145,7 @@ public class StreamExamplesRunner extends ExampleRunner {
     }
 
     private void runSorted() {
+        System.out.println("Running sorted example");
         Sorted sorted = new Sorted();
 
         SimpleObject[] sortedObjectsStream = sorted.runStreamForArray(objectGenerator.generateSimpleObjectArray());
@@ -163,6 +160,7 @@ public class StreamExamplesRunner extends ExampleRunner {
     }
 
     private void runMax() {
+        System.out.println("Running max example");
         Max max = new Max();
 
         SimpleObject maxObjectsStream = max.runStreamForArray(objectGenerator.generateSimpleObjectArray());
@@ -177,6 +175,7 @@ public class StreamExamplesRunner extends ExampleRunner {
     }
     
     private void runReduce() {
+        System.out.println("Running reduce example");
         Reduce reduce = new Reduce();
 
         SimpleObject reduceObjectsStream = reduce.runStreamForArray(objectGenerator.generateSimpleObjectArray());
@@ -191,6 +190,7 @@ public class StreamExamplesRunner extends ExampleRunner {
     }
 
     private void runSideEffects() {
+        System.out.println("Running example of side effects");
         SideEffects sideEffects = new SideEffects();
 
         SimpleObject[] simpleObjects = objectGenerator.generateSimpleObjectArray();
