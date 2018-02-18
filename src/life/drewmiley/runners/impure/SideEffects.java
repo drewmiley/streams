@@ -18,4 +18,8 @@ public class SideEffects {
         List<SimpleObject> sideEffectsObjectListStream = sideEffects.runStreamForList(simpleObjectList);
         List<SimpleObject> sideEffectsObjectListImperative = sideEffects.runImperativeForList(simpleObjectList);
     }
+
+    public static void main(String[] strings) {
+
+    }
 }

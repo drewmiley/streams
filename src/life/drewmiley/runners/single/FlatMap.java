@@ -24,4 +24,8 @@ public class FlatMap {
         System.out.println(flatMapObjectListImperative.get(0).getNumber() + flatMapObjectListImperative.get(0).getText());
         System.out.println(flatMapObjectListImperative.size());
     }
+
+    public static void main(String[] strings) {
+
+    }
 }

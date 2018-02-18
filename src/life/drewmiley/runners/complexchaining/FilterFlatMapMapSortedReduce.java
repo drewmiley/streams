@@ -17,4 +17,8 @@ public class FilterFlatMapMapSortedReduce {
         System.out.println(objectListStream);
         System.out.println(objectListImperative);
     }
+
+    public static void main(String[] strings) {
+        run(new ObjectGenerator());
+    }
 }

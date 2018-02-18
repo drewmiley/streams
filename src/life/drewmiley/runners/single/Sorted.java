@@ -20,4 +20,8 @@ public class Sorted {
         System.out.println(sortedObjectListStream.get(0).getNumber() + sortedObjectListStream.get(0).getText());
         System.out.println(sortedObjectListImperative.get(0).getNumber() + sortedObjectListImperative.get(0).getText());
     }
+
+    public static void main(String[] strings) {
+
+    }
 }

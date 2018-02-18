@@ -22,4 +22,8 @@ public class Map {
         System.out.println(mappedObjectListStream.get(0));
         System.out.println(mappedObjectListImperative.get(0));
     }
+
+    public static void main(String[] strings) {
+
+    }
 }

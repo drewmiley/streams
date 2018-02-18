@@ -22,4 +22,8 @@ public class FindFirst {
         System.out.println(findFirstObjectListStream.getNumber() + findFirstObjectListStream.getText());
         System.out.println(findFirstObjectListImperative.getNumber() + findFirstObjectListImperative.getText());
     }
+
+    public static void main(String[] strings) {
+
+    }
 }

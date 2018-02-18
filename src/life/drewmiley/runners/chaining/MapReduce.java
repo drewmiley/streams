@@ -22,4 +22,8 @@ public class MapReduce {
         System.out.println(objectListStream);
         System.out.println(objectListImperative);
     }
+
+    public static void main(String[] strings) {
+
+    }
 }

@@ -18,4 +18,8 @@ public class FlatMapReduce {
         System.out.println(objectListStream.getNumber() + objectListStream.getText());
         System.out.println(objectListImperative.getNumber() + objectListImperative.getText());
     }
+
+    public static void main(String[] strings) {
+
+    }
 }

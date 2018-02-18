@@ -18,4 +18,8 @@ public class ForEach {
         forEach.runStreamForList(simpleObjectList);
         forEach.runImperativeForList(simpleObjectList);
     }
+
+    public static void main(String[] strings) {
+
+    }
 }

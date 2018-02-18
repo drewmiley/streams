@@ -18,4 +18,8 @@ public class Max {
         System.out.println(maxObjectListStream.getNumber() + maxObjectListStream.getText());
         System.out.println(maxObjectListImperative.getNumber() + maxObjectListImperative.getText());
     }
+
+    public static void main(String[] strings) {
+
+    }
 }

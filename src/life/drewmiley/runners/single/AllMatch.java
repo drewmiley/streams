@@ -22,4 +22,8 @@ public class AllMatch {
         System.out.println(allMatchObjectListStream);
         System.out.println(allMatchObjectListImperative);
     }
+
+    public static void main(String[] strings) {
+
+    }
 }

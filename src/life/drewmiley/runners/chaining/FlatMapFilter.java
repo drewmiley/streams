@@ -24,4 +24,8 @@ public class FlatMapFilter {
         System.out.println(objectListImperative.get(0).getNumber() + objectListImperative.get(0).getText());
         System.out.println(objectListImperative.size());
     }
+
+    public static void main(String[] strings) {
+
+    }
 }

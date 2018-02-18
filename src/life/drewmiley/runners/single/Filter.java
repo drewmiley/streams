@@ -26,4 +26,8 @@ public class Filter {
         System.out.println(filterObjectListImperative.get(0).getNumber() + filterObjectListImperative.get(0).getText());
         System.out.println(filterObjectListImperative.size());
     }
+
+    public static void main(String[] strings) {
+
+    }
 }

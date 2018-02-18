@@ -26,4 +26,8 @@ public class FilterMap {
         System.out.println(objectListImperative.get(0));
         System.out.println(objectListImperative.size());
     }
+
+    public static void main(String[] strings) {
+
+    }
 }

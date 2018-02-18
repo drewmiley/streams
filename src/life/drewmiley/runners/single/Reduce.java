@@ -18,4 +18,8 @@ public class Reduce {
         System.out.println(reduceObjectListStream.getNumber() + reduceObjectListStream.getText());
         System.out.println(reduceObjectListImperative.getNumber() + reduceObjectListImperative.getText());
     }
+
+    public static void main(String[] strings) {
+
+    }
 }

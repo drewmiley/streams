@@ -26,4 +26,8 @@ public class SortedMap {
         System.out.println(objectListImperative.get(0));
         System.out.println(objectListImperative.size());
     }
+
+    public static void main(String[] strings) {
+
+    }
 }
