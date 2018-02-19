@@ -25,6 +25,6 @@ public class MapTest extends StreamTester {
     public void listReturnsEqual() {
         List<String> stream = map.runStreamForList(objectGenerator.generateSimpleObjectList());
         List<String> imperative = map.runImperativeForList(objectGenerator.generateSimpleObjectList());
-        testListsEqual(stream, imperative);
+        testStringListsEqual(stream, imperative);
     }
 }

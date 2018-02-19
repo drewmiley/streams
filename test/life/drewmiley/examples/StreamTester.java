@@ -28,7 +28,13 @@ public abstract class StreamTester {
                 .forEach(i -> assertTrue(stream[i].equals(imperative[i])));
     }
 
-    public void testListsEqual(List stream, List imperative) {
+    public void testListsEqual(List<SimpleObject> stream, List<SimpleObject> imperative) {
+        assertTrue(stream.size() == imperative.size());
+        IntStream.range(1, stream.size())
+                .forEach(i -> assertTrue(stream.get(i).equals(imperative.get(i))));
+    }
+
+    public void testStringListsEqual(List<String> stream, List<String> imperative) {
         assertTrue(stream.size() == imperative.size());
         IntStream.range(1, stream.size())
                 .forEach(i -> assertTrue(stream.get(i).equals(imperative.get(i))));
