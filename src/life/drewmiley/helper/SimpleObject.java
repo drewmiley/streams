@@ -25,4 +25,9 @@ public class SimpleObject {
         this.setNumber(number);
         this.setText(text);
     }
+
+    public boolean equals(SimpleObject simpleObject) {
+        return this.getNumber() == simpleObject.getNumber() &&
+                this.getText().equals(simpleObject.getText());
+    }
 }

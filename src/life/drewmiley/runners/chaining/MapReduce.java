@@ -18,7 +18,7 @@ public class MapReduce {
 
         List<SimpleObject> simpleObjectList = objectGenerator.generateSimpleObjectList();
         String objectListStream = mapReduce.runStreamForList(simpleObjectList);
-        String objectListImperative = mapReduce.runStreamForImperative(simpleObjectList);
+        String objectListImperative = mapReduce.runImperativeForList(simpleObjectList);
         System.out.println(objectListStream);
         System.out.println(objectListImperative);
     }

@@ -30,7 +30,7 @@ public class MapReduce {
                 .orElse(null);
     }
 
-    public String runStreamForImperative(List<SimpleObject> simpleObjectList) {
+    public String runImperativeForList(List<SimpleObject> simpleObjectList) {
         String result = "";
         for (SimpleObject simpleObject : simpleObjectList) {
             result += InlineFunctions.arbitraryMapper(simpleObject);

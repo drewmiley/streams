@@ -20,7 +20,7 @@ public class FilterFlatMapMapSortedReduce {
                 .orElse(null);
     }
 
-    public String runImperatveForArray(ComplexObject[] complexObjects) {
+    public String runImperativeForArray(ComplexObject[] complexObjects) {
         String[] array = new String[0];
         for (int i = 0; i < complexObjects.length; i++) {
             int currentArrayLength = array.length;

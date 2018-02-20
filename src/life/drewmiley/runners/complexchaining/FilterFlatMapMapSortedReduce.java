@@ -8,7 +8,7 @@ public class FilterFlatMapMapSortedReduce {
         life.drewmiley.examples.complexchaining.FilterFlatMapMapSortedReduce filterFlatMapMapSortedReduce = new life.drewmiley.examples.complexchaining.FilterFlatMapMapSortedReduce();
 
         String objectsStream = filterFlatMapMapSortedReduce.runStreamForArray(objectGenerator.generateComplexObjectArray());
-        String objectsImperative = filterFlatMapMapSortedReduce.runImperatveForArray(objectGenerator.generateComplexObjectArray());
+        String objectsImperative = filterFlatMapMapSortedReduce.runImperativeForArray(objectGenerator.generateComplexObjectArray());
         System.out.println(objectsStream);
         System.out.println(objectsImperative);
 

@@ -8,24 +8,28 @@ import java.util.List;
 
 public class ForEach {
 
-    public void runStreamForArray(SimpleObject[] simpleObjects) {
+    public SimpleObject[] runStreamForArray(SimpleObject[] simpleObjects) {
         Arrays.stream(simpleObjects).forEach(simpleObject -> InlineFunctions.arbitraryFunction(simpleObject));
+        return simpleObjects;
     }
 
-    public void runImperativeForArray(SimpleObject[] simpleObjects) {
+    public SimpleObject[] runImperativeForArray(SimpleObject[] simpleObjects) {
         for (int i = 0; i < simpleObjects.length; i++) {
             SimpleObject simpleObject = simpleObjects[i];
             InlineFunctions.arbitraryFunction(simpleObject);
         }
+        return simpleObjects;
     }
 
-    public void runStreamForList(List<SimpleObject> simpleObjectList) {
+    public List<SimpleObject> runStreamForList(List<SimpleObject> simpleObjectList) {
         simpleObjectList.forEach(simpleObject -> InlineFunctions.arbitraryFunction(simpleObject));
+        return simpleObjectList;
     }
 
-    public void runImperativeForList(List<SimpleObject> simpleObjectList) {
+    public List<SimpleObject> runImperativeForList(List<SimpleObject> simpleObjectList) {
         for (SimpleObject simpleObject : simpleObjectList) {
             InlineFunctions.arbitraryFunction(simpleObject);
         }
+        return simpleObjectList;
     }
 }
