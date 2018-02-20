@@ -11,16 +11,27 @@ public class SideEffects {
 
     private int number;
 
+    public SideEffects() {
+        this.resetNumber();
+    }
+
     private SimpleObject dummyMap(SimpleObject simpleObject) {
         return simpleObject;
     }
 
     private void sideEffect() {
-        number *= 2;
+        this.number *= 2;
+    }
+
+    private void resetNumber() {
+        this.number = 1;
+    }
+
+    public int getNumber() {
+        return this.number;
     }
 
     public SimpleObject[] runStreamForArray(SimpleObject[] simpleObjects) {
-        number = 1;
         SimpleObject[] result = Arrays.stream(simpleObjects)
                 .map(simpleObject -> {
                     sideEffect();
@@ -31,7 +42,6 @@ public class SideEffects {
     }
 
     public SimpleObject[] runImperativeForArray(SimpleObject[] simpleObjects) {
-        number = 1;
         SimpleObject[] result = new SimpleObject[simpleObjects.length];
         for (int i = 0; i < simpleObjects.length; i++) {
             SimpleObject simpleObject = simpleObjects[i];
@@ -43,7 +53,6 @@ public class SideEffects {
     }
 
     public List<SimpleObject> runStreamForList(List<SimpleObject> simpleObjectList) {
-        number = 1;
         List<SimpleObject> result = simpleObjectList.stream()
                 .map(simpleObject -> {
                     sideEffect();
@@ -54,7 +63,6 @@ public class SideEffects {
     }
 
     public List<SimpleObject> runImperativeForList(List<SimpleObject> simpleObjectList) {
-        number = 1;
         List<SimpleObject> result = new ArrayList<>();
         for (SimpleObject simpleObject : simpleObjectList) {
             sideEffect();
