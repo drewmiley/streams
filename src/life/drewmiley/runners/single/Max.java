@@ -20,6 +20,6 @@ public class Max {
     }
 
     public static void main(String[] strings) {
-
+        run(new ObjectGenerator());
     }
 }

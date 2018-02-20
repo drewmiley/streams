@@ -28,6 +28,6 @@ public class FilterMap {
     }
 
     public static void main(String[] strings) {
-
+        run(new ObjectGenerator());
     }
 }

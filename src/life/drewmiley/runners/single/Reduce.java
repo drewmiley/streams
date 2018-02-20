@@ -20,6 +20,6 @@ public class Reduce {
     }
 
     public static void main(String[] strings) {
-
+        run(new ObjectGenerator());
     }
 }

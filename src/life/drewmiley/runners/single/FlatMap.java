@@ -26,6 +26,6 @@ public class FlatMap {
     }
 
     public static void main(String[] strings) {
-
+        run(new ObjectGenerator());
     }
 }

@@ -20,6 +20,6 @@ public class FlatMapReduce {
     }
 
     public static void main(String[] strings) {
-
+        run(new ObjectGenerator());
     }
 }

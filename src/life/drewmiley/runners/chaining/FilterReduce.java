@@ -24,6 +24,6 @@ public class FilterReduce {
     }
 
     public static void main(String[] strings) {
-
+        run(new ObjectGenerator());
     }
 }

@@ -20,6 +20,6 @@ public class SideEffects {
     }
 
     public static void main(String[] strings) {
-
+        run(new ObjectGenerator());
     }
 }

@@ -28,6 +28,6 @@ public class FilterSorted {
     }
 
     public static void main(String[] strings) {
-
+        run(new ObjectGenerator());
     }
 }

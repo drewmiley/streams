@@ -24,6 +24,6 @@ public class AnyMatch {
     }
 
     public static void main(String[] strings) {
-
+        run(new ObjectGenerator());
     }
 }

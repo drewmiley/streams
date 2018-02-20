@@ -22,6 +22,6 @@ public class Sorted {
     }
 
     public static void main(String[] strings) {
-
+        run(new ObjectGenerator());
     }
 }

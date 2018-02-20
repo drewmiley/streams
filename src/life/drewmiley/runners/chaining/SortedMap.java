@@ -28,6 +28,6 @@ public class SortedMap {
     }
 
     public static void main(String[] strings) {
-
+        run(new ObjectGenerator());
     }
 }
