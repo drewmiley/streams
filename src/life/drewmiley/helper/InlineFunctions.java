@@ -22,6 +22,10 @@ public class InlineFunctions {
         System.out.println(simpleObject.getNumber() + simpleObject.getText());
     }
 
+    public static void arbitrarySideEffect(SimpleObject simpleObject) {
+        simpleObject.setNumber(simpleObject.getNumber() + 10);
+    }
+
     public static SimpleObject arbitraryObjectMapper(SimpleObject simpleObject) {
         return new SimpleObject(simpleObject.getNumber() + 10, simpleObject.getText().toUpperCase());
     }
