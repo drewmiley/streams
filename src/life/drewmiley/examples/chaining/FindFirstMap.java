@@ -12,18 +12,56 @@ import java.util.stream.Collectors;
 public class FindFirstMap {
 
     public String[] runStreamForArray(ComplexObject[] complexObjects) {
-        return new String[0];
+        return Arrays.stream(complexObjects)
+                .filter(complexObject -> InlineFunctions.arbitraryFilter(complexObject))
+                .findFirst()
+                .get().getSimpleObjectList().stream()
+                .map(simpleObject -> InlineFunctions.arbitraryMapper(simpleObject))
+                .toArray(String[]::new);
     }
 
     public String[] runImperativeForArray(ComplexObject[] complexObjects) {
-        return new String[0];
+        ComplexObject[] array = complexObjects;
+        ComplexObject firstFound = null;
+        for (int i = 0; i < array.length; i++) {
+            ComplexObject complexObject = array[i];
+            if (InlineFunctions.arbitraryFilter(complexObject)) {
+                firstFound = complexObject;
+                break;
+            }
+        }
+        List<SimpleObject> simpleObjects = firstFound.getSimpleObjectList();
+        String[] mappedObjects = new String[simpleObjects.size()];
+        for (int i = 0; i < simpleObjects.size(); i++) {
+            SimpleObject simpleObject = simpleObjects.get(i);
+            mappedObjects[i] = InlineFunctions.arbitraryMapper(simpleObject);
+        }
+        return mappedObjects;
     }
 
     public List<String> runStreamForList(List<ComplexObject> complexObjectList) {
-        return null;
+        return complexObjectList.stream()
+                .filter(complexObject -> InlineFunctions.arbitraryFilter(complexObject))
+                .findFirst()
+                .get().getSimpleObjectList().stream()
+                .map(simpleObject -> InlineFunctions.arbitraryMapper(simpleObject))
+                .collect(Collectors.toList());
     }
 
     public List<String> runImperativeForList(List<ComplexObject> complexObjectList) {
-        return null;
+        List<ComplexObject> list = complexObjectList;
+        ComplexObject firstFound = null;
+        for (ComplexObject complexObject : list) {
+            if (InlineFunctions.arbitraryFilter(complexObject)) {
+                firstFound = complexObject;
+                break;
+            }
+        }
+        List<SimpleObject> simpleObjectList = firstFound.getSimpleObjectList();
+        List<String> mappedObjects = new ArrayList<>();
+        for (SimpleObject simpleObject : simpleObjectList) {
+            mappedObjects.add(InlineFunctions.arbitraryMapper(simpleObject));
+        }
+        return mappedObjects;
     }
 }
