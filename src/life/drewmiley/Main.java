@@ -27,7 +27,10 @@ public class Main {
         FilterMap.main(new String[0]);
         FilterReduce.main(new String[0]);
         FilterSorted.main(new String[0]);
+        FindFirstFilter.main(new String[0]);
         FindFirstMap.main(new String[0]);
+        FindFirstReduce.main(new String[0]);
+        FindFirstSorted.main(new String[0]);
         FlatMapFilter.main(new String[0]);
         FlatMapMap.main(new String[0]);
         FlatMapReduce.main(new String[0]);
