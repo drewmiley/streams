@@ -8,11 +8,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class FlatMapFilter {
+import static life.drewmiley.helper.InlineFunctions.arbitraryFilter;
 
-    private boolean arbitraryFilter(SimpleObject simpleObject) {
-        return simpleObject.getNumber() % 2 == 0;
-    }
+public class FlatMapFilter {
 
     public SimpleObject[] runStreamForArray(ComplexObject[] complexObjects) {
         return Arrays.stream(complexObjects)
