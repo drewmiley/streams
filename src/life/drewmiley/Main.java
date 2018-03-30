@@ -35,7 +35,10 @@ public class Main {
         FlatMapMap.main(new String[0]);
         FlatMapReduce.main(new String[0]);
         FlatMapSorted.main(new String[0]);
+        MaxFilter.main(new String[0]);
         MaxMap.main(new String[0]);
+        MaxReduce.main(new String[0]);
+        MaxSorted.main(new String[0]);
         MapFilter.main(new String[0]);
         MapReduce.main(new String[0]);
         MapSorted.main(new String[0]);
